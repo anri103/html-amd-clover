@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/assets/favicon/favicon.svg" sizes="32x32" />
+    <title>@@title</title>
+
+    <link rel="stylesheet" href="assets/css/fancybox.css">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/style.min.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+</head>
+<body>
+
+    <!-- header -->
+    <header class="header" id="siteHeader">
+        <div class="container-fluid">
+
+            <!-- device: desktop -->
+            <div data-device="desktop">
+                <div class="header__rounded-wrap">
+                    <div class="row align-items-center">
+    
+                        <!-- col left -->
+                        <div class="col">
+                            <!-- navigation -->
+                            <nav>
+                                <ul class="desktop-nav" id="desktopNav">
+                                    <li class="nav-item">
+                                        <a href="#cloverSystem" class="active">
+                                            <span>Система</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#cloverProjects" class="">
+                                            <span>Проекты</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#cloverCalculation" class="">
+                                            <span>Расчет стоимости</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#cloverReviews" class="">
+                                            <span>Отзывы</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#cloverFaq" class="">
+                                            <span>Вопросы</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+    
+                        <!-- col center (logo) -->
+                        <div class="col-auto">
+                            <a href="index.html">
+                                <img class="site-logo" src="assets/img/logo/logo.svg" alt="">
+                            </a>
+                        </div>
+    
+                        <!-- col right -->
+                        <div class="col">
+                            <!-- actions -->
+                            <div class="d-flex align-items-center justify-content-end gap-2 gap-xxl-6 gap-xxxl-8 gap-xxxxl-10">
+                                <!-- phone -->
+                                <a href="tel:+74951595901" class="btn btn-small btn-outline-primary">+7 (495) 159-59-01</a>
+                                <!-- socials -->
+                                <div class="d-flex align-items-center gap-2 gap-xxl-3">
+                                    <!-- max -->
+                                    <a href="#" class="btn btn-icon-small btn-outline-primary">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M9.97686 18.9076C8.17506 18.9076 7.33773 18.6435 5.88227 17.5867C4.96164 18.7755 2.04632 19.7046 1.91918 18.1151C1.91918 16.9219 1.65614 15.9136 1.35803 14.8129C1.00294 13.4567 0.599609 11.9465 0.599609 9.75824C0.599609 4.53187 4.86958 0.600006 9.92865 0.600006C14.9921 0.600006 18.9596 4.72561 18.9596 9.80666C18.9766 14.8091 14.9577 18.881 9.97686 18.9076ZM10.0514 5.11747C7.58763 4.98979 5.66745 6.70256 5.24221 9.38838C4.89149 11.6119 5.51402 14.3197 6.04447 14.4606C6.29874 14.5223 6.9388 14.0027 7.33773 13.602C7.9974 14.0597 8.76558 14.3346 9.56479 14.399C12.1177 14.5223 14.299 12.5704 14.4704 10.0092C14.5702 7.44263 12.6046 5.26876 10.0514 5.12188V5.11747Z" stroke="currentColor" stroke-width="1.2"/>
+                                        </svg>
+                                    </a>
+                                    <!-- vk -->
+                                    <a href="#" class="btn btn-icon-small btn-outline-primary">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="21" height="13" viewBox="0 0 21 13" fill="none">
+                                            <path d="M10.9618 11.6C4.47019 11.6 0.76756 7.47088 0.613281 0.600006H3.865C3.97181 5.64305 6.369 7.77919 8.26781 8.21963V0.600006H11.3298V4.94936C13.2048 4.76217 15.1746 2.78019 15.8392 0.600006H18.9011C18.3908 3.28669 16.2546 5.26868 14.7356 6.08349C16.2546 6.74415 18.6876 8.47288 19.6133 11.6H16.2428C15.5188 9.50791 13.7152 7.8893 11.3298 7.66908V11.6H10.9618Z" stroke="currentColor" stroke-width="1.2"/>
+                                        </svg>
+                                    </a>
+                                    <!-- tg -->
+                                    <a href="#" class="btn btn-icon-small btn-outline-primary">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="19" height="16" viewBox="0 0 19 16" fill="none">
+                                            <path d="M17.6199 0.00715073C17.721 0.023291 17.8162 0.0661307 17.8953 0.131174C17.9745 0.196309 18.0348 0.282051 18.0701 0.378244C18.1053 0.474099 18.1145 0.577534 18.0965 0.678049L15.4871 15.0267C15.4712 15.1144 15.4351 15.1975 15.3817 15.2689C15.3281 15.3403 15.2583 15.3979 15.1785 15.4378C15.0988 15.4777 15.0109 15.4983 14.9217 15.4984C14.8325 15.4984 14.7446 15.4776 14.6649 15.4378L9.81721 13.015L7.50178 15.3294C7.16414 15.667 6.59798 15.4649 6.52814 15.0169L6.52131 14.9232V11.0111C6.52144 10.8588 6.58163 10.7125 6.68928 10.6048L8.85139 8.43781L4.71564 10.2337L4.71369 10.2347C4.54221 10.3102 4.3387 10.2945 4.17756 10.1917L0.265448 7.69563C0.176058 7.63857 0.103834 7.55752 0.0574405 7.46223C0.0111239 7.36685 -0.0075443 7.26004 0.00275297 7.15461C0.01315 7.04917 0.0520757 6.94813 0.116034 6.8636C0.180037 6.77911 0.266324 6.71374 0.365058 6.67512L17.3201 0.0393773C17.4154 0.00228757 17.519 -0.00895113 17.6199 0.00715073ZM1.83869 7.33821L2.33576 7.65461L4.4051 8.97492L4.53889 9.06086L11.1688 6.18391C11.7488 5.93303 12.2486 6.67338 11.8045 7.1175L7.67072 11.2513V13.5374L8.18342 13.0257L9.29768 11.9105C9.38262 11.8252 9.4933 11.7687 9.61213 11.7493C9.73072 11.7301 9.85233 11.7484 9.95978 11.8021L14.494 14.0677L16.7811 1.48762L1.83869 7.33821Z" fill="currentColor"/>
+                                        </svg>
+                                    </a>
+                                    <!-- mail -->
+                                    <a href="#" class="btn btn-icon-small btn-outline-primary">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="19" height="13" viewBox="0 0 19 13" fill="none">
+                                            <path d="M16.6631 0C17.5585 1.65615e-05 18.2871 0.72863 18.2871 1.62402V11.1631C18.2871 12.0585 17.5585 12.7871 16.6631 12.7871H1.62402C0.728548 12.7871 0 12.0585 0 11.1631V1.62402C1.70799e-05 0.72862 0.728616 0 1.62402 0H16.6631ZM9.48535 7.76172C9.38533 7.84122 9.26461 7.88085 9.14355 7.88086C9.02261 7.88086 8.90192 7.84119 8.80176 7.76172L1.09961 1.64551V11.1631L1.11035 11.2656C1.13049 11.3662 1.17944 11.4595 1.25293 11.5332C1.35117 11.6314 1.4851 11.6873 1.62402 11.6875H16.6631L16.7656 11.6768C16.8664 11.6566 16.9595 11.6069 17.0332 11.5332C17.1069 11.4595 17.1566 11.3664 17.1768 11.2656L17.1875 11.1631V1.64551L9.48535 7.76172ZM2.18066 1.09961L9.14355 6.62891L16.1055 1.09961H2.18066Z" fill="currentColor"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <!-- sign-btn -->
+                                <a href="#modalMainAction" data-bs-toggle="modal" class="btn btn-small btn-primary">Оставить заявку</a>
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+    
+            <!-- device: Mobile -->
+            <div data-device="mobile">
+                <div class="header__rounded-wrap">
+                    <div class="row align-items-center">
+    
+                        <!-- col left (logo) -->
+                        <div class="col-auto">
+                            <a href="index.html">
+                                <img class="site-logo" src="assets/img/logo/logo.svg" alt="">
+                            </a>
+                        </div>
+    
+                        <!-- col right -->
+                        <div class="col">
+                            <div class="d-flex align-items-center justify-content-end gap-6">
+                                <!-- mobile-toggler -->
+                                <button type="button" class="btn btn-mobileMenuToggler" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMobileMenu">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="20" viewBox="0 0 32 20" fill="none">
+                                        <rect width="32" height="2" rx="1" fill="#001D00"/>
+                                        <rect y="9" width="32" height="2" rx="1" fill="#001D00"/>
+                                        <rect y="18" width="32" height="2" rx="1" fill="#001D00"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </header>
+
+    <!-- offcanvasMobileMenu -->
+    <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasMobileMenu">
+        <div class="offcanvas-body">
+            <div class="d-flex flex-column justify-content-between gap-10 h-100">
+
+                <!-- header -->
+                <div class="d-flex align-items-center justify-content-between">
+                    <a href="index.html">
+                        <img class="site-logo" src="assets/img/logo/logo.svg" alt="">
+                    </a>
+                    <button type="button" class="btn border-0 p-1" data-bs-dismiss="offcanvas" aria-label="Закрыть">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <rect x="1.41406" y="0.020813" width="32" height="2" rx="1" transform="rotate(45 1.41406 0.020813)" fill="#001D00"/>
+                            <rect x="-0.0195312" y="22.6274" width="32" height="2" rx="1" transform="rotate(-45 -0.0195312 22.6274)" fill="#001D00"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- menu -->
+                <nav>
+                    <ul class="mobile-nav" id="mobileNav">
+                        <li class="nav-item">
+                            <a href="#cloverSystem" class="active">
+                                <span>Система</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#cloverProjects" class="">
+                                <span>Проекты</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#cloverCalculation" class="">
+                                <span>Расчет стоимости</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#cloverReviews" class="">
+                                <span>Отзывы</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#cloverFaq" class="">
+                                <span>Вопросы</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- buttons -->
+                <div class="d-flex flex-column gap-4">
+                    <a href="tel:+74951595901" class="btn btn-big btn-white ff-title fs-xxs w-100">+7 (495) 159-59-01</a>
+                    <div class="d-grid grid-cols-2 row-gap-4 column-gap-1">
+                        <!-- vk -->
+                        <a href="#" class="btn btn-small btn-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="21" height="13" viewBox="0 0 21 13" fill="none">
+                                <path d="M10.9618 11.6C4.47019 11.6 0.76756 7.47088 0.613281 0.600006H3.865C3.97181 5.64305 6.369 7.77919 8.26781 8.21963V0.600006H11.3298V4.94936C13.2048 4.76217 15.1746 2.78019 15.8392 0.600006H18.9011C18.3908 3.28669 16.2546 5.26868 14.7356 6.08349C16.2546 6.74415 18.6876 8.47288 19.6133 11.6H16.2428C15.5188 9.50791 13.7152 7.8893 11.3298 7.66908V11.6H10.9618Z" stroke="currentColor" stroke-width="1.2"/>
+                            </svg>
+                            Вконтакте
+                        </a>
+                        <!-- tg -->
+                        <a href="#" class="btn btn-small btn-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="16" viewBox="0 0 19 16" fill="none">
+                                <path d="M17.6199 0.00715073C17.721 0.023291 17.8162 0.0661307 17.8953 0.131174C17.9745 0.196309 18.0348 0.282051 18.0701 0.378244C18.1053 0.474099 18.1145 0.577534 18.0965 0.678049L15.4871 15.0267C15.4712 15.1144 15.4351 15.1975 15.3817 15.2689C15.3281 15.3403 15.2583 15.3979 15.1785 15.4378C15.0988 15.4777 15.0109 15.4983 14.9217 15.4984C14.8325 15.4984 14.7446 15.4776 14.6649 15.4378L9.81721 13.015L7.50178 15.3294C7.16414 15.667 6.59798 15.4649 6.52814 15.0169L6.52131 14.9232V11.0111C6.52144 10.8588 6.58163 10.7125 6.68928 10.6048L8.85139 8.43781L4.71564 10.2337L4.71369 10.2347C4.54221 10.3102 4.3387 10.2945 4.17756 10.1917L0.265448 7.69563C0.176058 7.63857 0.103834 7.55752 0.0574405 7.46223C0.0111239 7.36685 -0.0075443 7.26004 0.00275297 7.15461C0.01315 7.04917 0.0520757 6.94813 0.116034 6.8636C0.180037 6.77911 0.266324 6.71374 0.365058 6.67512L17.3201 0.0393773C17.4154 0.00228757 17.519 -0.00895113 17.6199 0.00715073ZM1.83869 7.33821L2.33576 7.65461L4.4051 8.97492L4.53889 9.06086L11.1688 6.18391C11.7488 5.93303 12.2486 6.67338 11.8045 7.1175L7.67072 11.2513V13.5374L8.18342 13.0257L9.29768 11.9105C9.38262 11.8252 9.4933 11.7687 9.61213 11.7493C9.73072 11.7301 9.85233 11.7484 9.95978 11.8021L14.494 14.0677L16.7811 1.48762L1.83869 7.33821Z" fill="currentColor"/>
+                            </svg>
+                            Телеграм
+                        </a>
+                        <!-- max -->
+                        <a href="#" class="btn btn-small btn-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M9.97686 18.9076C8.17506 18.9076 7.33773 18.6435 5.88227 17.5867C4.96164 18.7755 2.04632 19.7046 1.91918 18.1151C1.91918 16.9219 1.65614 15.9136 1.35803 14.8129C1.00294 13.4567 0.599609 11.9465 0.599609 9.75824C0.599609 4.53187 4.86958 0.600006 9.92865 0.600006C14.9921 0.600006 18.9596 4.72561 18.9596 9.80666C18.9766 14.8091 14.9577 18.881 9.97686 18.9076ZM10.0514 5.11747C7.58763 4.98979 5.66745 6.70256 5.24221 9.38838C4.89149 11.6119 5.51402 14.3197 6.04447 14.4606C6.29874 14.5223 6.9388 14.0027 7.33773 13.602C7.9974 14.0597 8.76558 14.3346 9.56479 14.399C12.1177 14.5223 14.299 12.5704 14.4704 10.0092C14.5702 7.44263 12.6046 5.26876 10.0514 5.12188V5.11747Z" stroke="currentColor" stroke-width="1.2"/>
+                            </svg>
+                            Макс
+                        </a>
+                        <!-- mail -->
+                        <a href="#" class="btn btn-small btn-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="13" viewBox="0 0 19 13" fill="none">
+                                <path d="M16.6631 0C17.5585 1.65615e-05 18.2871 0.72863 18.2871 1.62402V11.1631C18.2871 12.0585 17.5585 12.7871 16.6631 12.7871H1.62402C0.728548 12.7871 0 12.0585 0 11.1631V1.62402C1.70799e-05 0.72862 0.728616 0 1.62402 0H16.6631ZM9.48535 7.76172C9.38533 7.84122 9.26461 7.88085 9.14355 7.88086C9.02261 7.88086 8.90192 7.84119 8.80176 7.76172L1.09961 1.64551V11.1631L1.11035 11.2656C1.13049 11.3662 1.17944 11.4595 1.25293 11.5332C1.35117 11.6314 1.4851 11.6873 1.62402 11.6875H16.6631L16.7656 11.6768C16.8664 11.6566 16.9595 11.6069 17.0332 11.5332C17.1069 11.4595 17.1566 11.3664 17.1768 11.2656L17.1875 11.1631V1.64551L9.48535 7.76172ZM2.18066 1.09961L9.14355 6.62891L16.1055 1.09961H2.18066Z" fill="currentColor"/>
+                            </svg>
+                            Почта
+                        </a>
+                    </div>
+                    <a href="#" class="btn btn-big btn-primary w-100">Оставить заявку</a>
+                </div>
+
+            </div>
+        </div>
+    </div>

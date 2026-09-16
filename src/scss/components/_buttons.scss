@@ -1,0 +1,182 @@
+/*------------------------------------------------------------------
+[ buttons ]*/
+
+.btn {
+    --bs-btn-padding-y: 0;
+    --bs-btn-padding-x: 1rem;
+    --bs-btn-font-size: 16px;
+    --bs-btn-font-weight: 600;
+    --bs-btn-line-height: 1;
+    --bs-btn-border-width: 1px;
+    --bs-btn-disabled-opacity: 0.25;
+    --bs-btn-focus-box-shadow: none;
+    --bs-btn-border-radius: var(--bs-border-radius-pill);
+    position: relative;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-transform: uppercase;
+
+    svg {
+        flex-shrink: 0;
+    }
+}
+
+.btn-primary {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: var(--bs-primary);
+    --bs-btn-border-color: var(--bs-primary);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #204520;
+    --bs-btn-hover-border-color: #204520;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #204520;
+    --bs-btn-active-border-color: #204520;
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #204520;
+    --bs-btn-disabled-border-color: #204520;
+}
+.btn-outline-primary {
+    --bs-btn-color: var(--bs-primary);
+    --bs-btn-border-color: var(--bs-primary);
+    --bs-btn-hover-color: var(--bs-primary);
+    --bs-btn-hover-bg: #B8CBB8;
+    --bs-btn-hover-border-color: var(--bs-primary);
+    --bs-btn-active-color: var(--bs-primary);
+    --bs-btn-active-bg: #B8CBB8;
+    --bs-btn-active-border-color: var(--bs-primary);
+    --bs-btn-disabled-color: var(--bs-primary);
+    --bs-btn-disabled-bg: #B8CBB8;
+    --bs-btn-disabled-border-color: var(--bs-primary);
+}
+.btn-white {
+    --bs-btn-color: var(--bs-body-color);
+    --bs-btn-bg: #F6F9F6;
+    --bs-btn-border-color: #F6F9F6;
+    --bs-btn-hover-color: #F6F9F6;
+    --bs-btn-hover-bg: #204520;
+    --bs-btn-hover-border-color: #204520;
+    --bs-btn-active-color: #F6F9F6;
+    --bs-btn-active-bg: #204520;
+    --bs-btn-active-border-color: #204520;
+    --bs-btn-disabled-color: #F6F9F6;
+    --bs-btn-disabled-bg: #204520;
+    --bs-btn-disabled-border-color: #204520;
+}
+
+.btn-small {
+    --bs-btn-padding-y: 0;
+    --bs-btn-padding-x: 0.75rem;
+    --bs-btn-font-size: 16px;
+    --bs-btn-font-weight: 400;
+    min-height: 32px;
+}
+.btn-big {
+    --bs-btn-padding-y: 0;
+    --bs-btn-padding-x: 1rem;
+    --bs-btn-border-width: 2px;
+    --bs-btn-font-size: 14px;
+    --bs-btn-font-weight: 600;
+    min-height: 56px;
+}
+.btn-icon-small {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    min-height: auto !important;
+}
+
+@include media-breakpoint-up(xl) {
+    .btn-small {
+        --bs-btn-padding-y: 0;
+        --bs-btn-padding-x: 0.75rem;
+        --bs-btn-font-size: 14px;
+        min-height: 30px;
+    }
+    .btn-big {
+        --bs-btn-padding-y: 0;
+        --bs-btn-padding-x: 3.4375rem;
+        --bs-btn-font-size: 16px;
+        min-height: 59px;
+    }
+    .btn-icon-small {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+@include media-breakpoint-up(xxxl) {
+    .btn-small {
+        --bs-btn-padding-y: 0;
+        --bs-btn-padding-x: 0.75rem;
+        --bs-btn-font-size: 16px;
+        min-height: 32px;
+    }
+    .btn-big {
+        --bs-btn-padding-y: 0;
+        --bs-btn-padding-x: 3.4375rem;
+        --bs-btn-font-size: 20px;
+        min-height: 64px;
+    }
+    .btn-icon-small {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+.btn-mobileMenuToggler {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: none !important;
+    min-height: auto !important;
+}
+
+// btn-backToTop
+// .btn-backToTop {
+//     position: fixed;
+//     right: 20px;
+//     bottom: 20px;
+//     opacity: 0;
+//     visibility: hidden;
+
+//     overflow: hidden;
+//     display: inline-flex;
+//     align-items: center;
+//     justify-content: center;
+//     width: 60px;
+//     height: 60px;
+//     padding: 0;
+//     border: none;
+//     border-radius: 50%;
+//     background: linear-gradient(149.74deg, #EE741D -21.4%, #FFAB70 37.85%, #EE741D 97.11%);
+
+//     transform: translateY(45px);
+//     transition: all 300ms linear;
+
+//     z-index: 100;
+
+//     &.show {
+//         opacity: 1;
+//         visibility: visible;
+//         transform: translateY(0);
+//     }
+
+//     svg {
+//         width: 21px;
+//         height: auto;
+//     }
+
+//     @include media-breakpoint-up(xl) {
+//         right: 30px;
+//         bottom: 30px;
+//         width: 90px;
+//         height: 90px;
+    
+//         svg {
+//             width: 32px;
+//         }
+//     }
+// }

@@ -1,0 +1,47 @@
+/*------------------------------------------------------------------
+[ global ]*/
+
+:root {
+    --ff-title: 'Onder', sans-serif;
+    --ff-body: 'Onest', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body { font-family: var(--ff-body); }
+
+.container-fluid {
+    --bs-gutter-x: 1.25rem;
+    max-width: 1920px;
+}
+.row {
+    --bs-gutter-x: 1.25rem;
+}
+
+// Максимальная ширина
+@include media-breakpoint-down(xl) {
+    [data-device="desktop"] {
+        display: none !important;
+    }
+}
+
+// Минимальная ширина
+@include media-breakpoint-up(sm) {
+    .container-fluid,
+    .row {
+        --bs-gutter-x: 1.5rem;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .container-fluid,
+    .row {
+        --bs-gutter-x: 2.5rem;
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    [data-device="mobile"] {
+        display: none !important;
+    }
+}

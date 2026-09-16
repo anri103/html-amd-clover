@@ -1,0 +1,32 @@
+/*------------------------------------------------------------------
+[ scrollable ]*/
+
+.scrollable-container {
+    position: relative;
+    overflow: hidden;
+    touch-action: pan-y;
+}
+
+.scrollable-wrapper {
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    white-space: nowrap;
+    overflow-x: auto;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.scrollable-item {
+    flex-shrink: 0;
+}
+
+@include media-breakpoint-up(lg) {
+    .scrollable-wrapper {
+        flex-wrap: wrap;
+        white-space: normal;
+    }
+}

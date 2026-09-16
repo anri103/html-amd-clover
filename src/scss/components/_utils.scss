@@ -1,0 +1,29 @@
+/*------------------------------------------------------------------
+[ utils ]*/
+
+.mx-n-gx {
+    margin-right: calc(-0.5 * var(--bs-gutter-x));
+    margin-left: calc(-0.5 * var(--bs-gutter-x));
+}
+
+.px-gx {
+    padding-right: calc(var(--bs-gutter-x) * 0.5);
+    padding-left: calc(var(--bs-gutter-x) * 0.5);
+}
+
+.inset-0 { inset: 0 !important; }
+
+.scrollbar-thin { scrollbar-width: thin; }
+
+.marker-primary li::marker {
+    color: var(--bs-primary);
+}
+
+.rounded-wrap {
+    border-radius: 40px;
+    background-color: var(--bs-light);
+
+    @include media-breakpoint-up(xxl) {
+        border-radius: 60px;
+    }
+}

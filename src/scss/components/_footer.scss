@@ -1,0 +1,34 @@
+/*------------------------------------------------------------------
+[ footer ]*/
+
+.footer {
+    padding-bottom: 10px;
+
+    a {
+        text-decoration: none;
+    }
+
+    .nav {
+        --bs-nav-link-padding-x: 0;
+        --bs-nav-link-padding-y: 0;
+        gap: 1.5rem;
+        font: normal 400 14px / 1 var(--ff-body);
+        text-transform: uppercase;
+    }
+
+    &__logos {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        color: #143814;
+        font: normal 400 12px / 1.3 var(--ff-body);
+    }
+
+    @include media-breakpoint-up(sm) {
+        padding-bottom: 12px;
+    }
+
+    @include media-breakpoint-up(md) {
+        padding-bottom: 20px;
+    }
+}

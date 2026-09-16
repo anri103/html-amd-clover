@@ -1,0 +1,15 @@
+/*------------------------------------------------------------------
+[ links ]*/
+
+// a { text-decoration: none; }
+
+// .link-white {
+//     --bs-link-color-rgb: var(--theme-white-rgb);
+//     --bs-link-hover-color-rgb: var(--theme-white-60-rgb);
+// }
+
+.inline-icon {
+    flex-shrink: 0;
+    vertical-align: -.125em;
+    transition: .2s ease-in-out transform;
+}
