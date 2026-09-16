@@ -46,6 +46,8 @@
     @include media-breakpoint-up(xl) {
         &__header {
             margin-bottom: 60px;
+            padding-left: 2.5rem;
+            padding-right: 2.5rem;
         }
 
         &__title {
@@ -62,6 +64,11 @@
     @include media-breakpoint-up(xxl) {
         padding: 60px 0;
 
+        &__header {
+            padding-left: 3.75rem;
+            padding-right: 3.75rem;
+        }
+
         &__title {
             font-size: 20px;
         }
@@ -69,6 +76,11 @@
 
     @include media-breakpoint-up(xxxl) {
         padding: 80px 0;
+
+        &__header {
+            padding-left: 5rem;
+            padding-right: 5rem;
+        }
 
         &__title {
             font-size: 24px;
@@ -434,14 +446,33 @@
 [ section-cloverSystem ]*/
 
 .section-cloverSystem {
+    overflow-x: clip;
 
     .section__subtitle {
         max-width: 240px;
     }
 
+    .bg-video-shape {
+        position: absolute;
+        bottom: 100%;
+        right: -20px;
+        width: 180px;
+        max-width: 100%;
+        height: auto;
+        display: block;
+        pointer-events: none;
+        -webkit-user-select: none;
+        user-select: none;
+        z-index: -1;
+    }
+
     @include media-breakpoint-up(sm) {
         .section__subtitle {
             max-width: 260px;
+        }
+
+        .bg-video-shape {
+            width: 200px;
         }
     }
 
@@ -453,6 +484,11 @@
         .section__subtitle {
             max-width: 520px;
         }
+
+        .bg-video-shape {
+            width: 280px;
+            right: 0;
+        }
     }
 
     @include media-breakpoint-up(lg) {
@@ -463,11 +499,21 @@
         .section__subtitle {
             max-width: 680px;
         }
+
+        .bg-video-shape {
+            width: 260px;
+        }
     }
 
     @include media-breakpoint-up(xl) {
         .section__title {
             max-width: 1080px;
+        }
+    }
+
+    @include media-breakpoint-up(xxl) {
+        .bg-video-shape {
+            width: 320px;
         }
     }
 
@@ -478,6 +524,17 @@
 
         .section__subtitle {
             max-width: 900px;
+        }
+
+        .bg-video-shape {
+            width: 400px;
+        }
+    }
+
+    @include media-breakpoint-up(xxxxl) {
+        .bg-video-shape {
+            width: 440px;
+            right: 140px;
         }
     }
 }
