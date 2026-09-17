@@ -5,44 +5,37 @@
     display: flex;
     flex-wrap: wrap;
     gap: 4px 0;
-
-    .clover-tag {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        height: 22px;
-        font: normal 400 10px / 1 var(--ff-body);
-        text-transform: uppercase;
-        border-width: 1px;
-        border-style: solid;
-        border-color: #484F48;
-        color: #484F48;
-        border-radius: 40px;
-        padding: 0 10px;
-        background-color: transparent;
-    }
+}
+.clover-tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 22px;
+    font: normal 400 10px / 1 var(--ff-body);
+    text-transform: uppercase;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #484F48;
+    color: #484F48;
+    border-radius: 40px;
+    padding: 0 10px;
+    background-color: transparent;
 
     @include media-breakpoint-up(sm) {
-        .clover-tag {
-            height: 28px;
-            padding: 0 12px;
-            font-size: 12px;
-        }
+        height: 28px;
+        padding: 0 12px;
+        font-size: 12px;
     }
-
+    
     @include media-breakpoint-up(xl) {
-        .clover-tag {
-            height: 30px;
-            font-size: 14px;
-        }
+        height: 30px;
+        font-size: 14px;
     }
-
+    
     @include media-breakpoint-up(xxxl) {
-        .clover-tag {
-            height: 40px;
-            padding: 0 24px;
-            font-size: 16px;
-        }
+        height: 40px;
+        padding: 0 24px;
+        font-size: 16px;
     }
 }
 
@@ -52,7 +45,6 @@
 .nav-breadcrumb {
     padding: 28px 0;
 }
-
 .breadcrumb {
     --bs-link-color-rgb: 20, 20, 20;
     --bs-link-hover-color-rgb: 10, 14, 22;
@@ -89,6 +81,9 @@
     --bs-accordion-item-padding-x: 1rem;
     --bs-accordion-item-padding-y: 1rem;
     --theme-accordion-divider: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
 }
 
 .accordion-item {
@@ -102,6 +97,7 @@
     position: relative;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 16px;
     width: 100%;
     padding: 0;
@@ -203,11 +199,4 @@
     .accordion-button {
         font-size: 28px;
     }
-}
-
-// accordionFaq
-.accordionFaq {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
 }
