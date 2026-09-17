@@ -36,74 +36,38 @@ document.addEventListener('DOMContentLoaded', function () {
     function initSwipers() {
         if (typeof Swiper === 'undefined') return;
 
-        if (document.querySelector('.swiperFeatures')) {
-            new Swiper('.swiperFeatures', {
-                slidesPerView: 1,
-                spaceBetween: 20,
-                loop: true,
-                navigation: {
-                    nextEl: '.swiperFeatures-area .btn-swiper-next',
-                    prevEl: '.swiperFeatures-area .btn-swiper-prev',
-                },
-                pagination: { el: '.swiper-pagination', clickable: true, dynamicBullets: true, dynamicMainBullets: 1, },
-                breakpoints: {
-                    768: { slidesPerView: 2 },
-                    992: { slidesPerView: 3 },
-                    1200: { slidesPerView: 4 },
-                },
-            });
-        }
+        if (document.querySelector('.swiperReviews')) {
 
-        if (document.querySelector('.swiperTeam')) {
-            new Swiper('.swiperTeam', {
-                slidesPerView: 1,
-                spaceBetween: 20,
-                loop: true,
-                navigation: {
-                    nextEl: '.swiperTeam-area .btn-swiper-next',
-                    prevEl: '.swiperTeam-area .btn-swiper-prev',
-                },
-                pagination: { el: '.swiper-pagination', clickable: true, dynamicBullets: true, dynamicMainBullets: 1, },
-                breakpoints: {
-                    768: { slidesPerView: 2 },
-                    992: { slidesPerView: 3 },
-                    1200: { slidesPerView: 4 },
-                },
-            });
-        }
+            const reviewsSlider = document.querySelector('.swiperReviews');
+            const reviewsArea = reviewsSlider.closest('.swiperReviews-area');
 
-        if (document.querySelector('.swiperGallery')) {
-            new Swiper('.swiperGallery', {
-                slidesPerView: 1,
-                spaceBetween: 20,
-                loop: true,
-                navigation: {
-                    nextEl: '.swiperGallery-area .btn-swiper-next',
-                    prevEl: '.swiperGallery-area .btn-swiper-prev',
-                },
-                pagination: { el: '.swiper-pagination', clickable: true, dynamicBullets: true, dynamicMainBullets: 1, },
-                breakpoints: {
-                    768: { slidesPerView: 2 },
-                    992: { slidesPerView: 3 },
-                    1200: { slidesPerView: 3 },
-                },
-            });
-        }
+            const currentCounter = reviewsArea.querySelector(
+                '.swiper-counter .current'
+            );
 
-        if (document.querySelector('.swiperBlog')) {
-            new Swiper('.swiperBlog', {
-                slidesPerView: 1,
-                spaceBetween: 30,
+            const totalCounter = reviewsArea.querySelector(
+                '.swiper-counter .total'
+            );
+
+            new Swiper(reviewsSlider, {
+                slidesPerView: 'auto',
+                spaceBetween: 4,
                 loop: true,
+
                 navigation: {
-                    nextEl: '.swiperBlog-area .btn-swiper-next',
-                    prevEl: '.swiperBlog-area .btn-swiper-prev',
+                    prevEl: reviewsArea.querySelector('.btn-swiper-prev'),
+                    nextEl: reviewsArea.querySelector('.btn-swiper-next'),
                 },
-                pagination: { el: '.swiper-pagination', clickable: true, dynamicBullets: true, dynamicMainBullets: 1, },
-                breakpoints: {
-                    768: { slidesPerView: 2 },
-                    992: { slidesPerView: 3 },
-                    1200: { slidesPerView: 3 },
+
+                on: {
+                    init: function () {
+                        currentCounter.textContent = this.realIndex + 1;
+                        totalCounter.textContent = this.slides.length;
+                    },
+
+                    slideChange: function () {
+                        currentCounter.textContent = this.realIndex + 1;
+                    },
                 },
             });
         }

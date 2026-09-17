@@ -309,3 +309,96 @@
         }
     }
 }
+
+// cardReview
+.cardReview {
+    --bs-card-spacer-y: 1.5rem;
+    --bs-card-spacer-x: 1rem;
+    --bs-card-border-radius: 40px;
+
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .card-title {
+        font: normal 500 10px / 1.5 var(--ff-title);
+        letter-spacing: -0.04em;
+        margin-top: 8px;
+        margin-bottom: 20px;
+    }
+
+    .card-text-box {
+        font: normal 400 16px / 1.3 var(--ff-body);
+    }
+
+    .card-author-name {
+        font: normal 500 16px / 1.3 var(--ff-body);
+        letter-spacing: -0.04em;
+    }
+
+    .card-author-job {
+        font: normal 400 14px / 1.3 var(--ff-body);
+    }
+
+    .card-thumb-img {
+        width: auto;
+        height: 155px;
+        border-radius: 20px;
+    }
+
+    @include media-breakpoint-up(sm) {
+        --bs-card-spacer-y: 1.5rem;
+        --bs-card-spacer-x: 1.5rem;
+    }
+
+    @include media-breakpoint-up(xl) {
+        --bs-card-spacer-y: 1.875rem;
+        --bs-card-spacer-x: 1.875rem;
+        --bs-card-border-radius: 60px;
+
+        .card-title {
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .card-text-box {
+            font-size: 17px;
+        }
+
+        .card-author-name {
+            font-size: 24px;
+        }
+
+        .card-author-job {
+            font-size: 17px;
+        }
+
+        .card-thumb-img {
+            height: 200px;
+            border-radius: 40px;
+        }
+    }
+
+    @include media-breakpoint-up(xxxl) {
+        --bs-card-spacer-y: 2.5rem;
+        --bs-card-spacer-x: 2.5rem;
+
+        .card-title {
+            font-size: 20px;
+        }
+
+        .card-text-box {
+            font-size: 20px;
+        }
+
+        .card-author-name {
+            font-size: 28px;
+        }
+
+        .card-author-job {
+            font-size: 20px;
+        }
+    }
+}

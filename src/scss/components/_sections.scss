@@ -586,3 +586,53 @@
         }
     }
 }
+
+/*------------------------------------------------------------------
+[ section-cloverReviews ]*/
+
+.section-cloverReviews {
+    overflow: hidden;
+
+    .section__header {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 0.75rem;
+    }
+
+    .reviews-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 4px;
+
+        .swiper {
+            width: 100%;
+            min-width: 0;
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+        .reviews-grid {
+            grid-template-columns: 275px minmax(0, 1fr);
+        }
+    }
+
+    @include media-breakpoint-up(xl) {
+        .reviews-grid {
+            grid-template-columns: 365px minmax(0, 1fr);
+        }
+    }
+
+    @include media-breakpoint-up(xxl) {
+        .reviews-grid {
+            grid-template-columns: 440px minmax(0, 1fr);
+        }
+    }
+
+    @include media-breakpoint-up(xxxl) {
+        .reviews-grid {
+            grid-template-columns: 515px minmax(0, 1fr);
+        }
+    }
+}
