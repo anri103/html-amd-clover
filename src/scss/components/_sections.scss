@@ -402,6 +402,7 @@
 [ section-cloverFeatures ]*/
 
 .section-cloverFeatures {
+    overflow: hidden;
 
     @include media-breakpoint-up(md) {
         .section__title {
@@ -543,6 +544,7 @@
 [ section-cloverFaq ]*/
 
 .section-cloverFaq {
+    overflow: hidden;
     padding-bottom: 4px;
 
     .faq-grid {

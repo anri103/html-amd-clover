@@ -26,6 +26,7 @@
     }
 }
 
+// swiperReviews
 .swiperReviews {
     .swiper-slide {
         width: 100%;
@@ -72,8 +73,10 @@
         letter-spacing: -0.04em;
         white-space: nowrap;
         color: #B8CBB8;
+        width: 120px;
+        text-align: center;
         border-radius: 20px;
-        padding: 20px 30px;
+        padding: 20px 0;
         background-color: var(--bs-light);
 
         .current {
@@ -106,6 +109,7 @@
         }
 
         .swiper-counter {
+            width: 140px;
             font-size: 14px;
         }
     }
@@ -117,13 +121,62 @@
         }
 
         .swiper-counter {
+            width: 150px;
             font-size: 16px;
         }
     }
 
     @include media-breakpoint-up(xxxl) {
         .swiper-counter {
+            width: 170px;
             font-size: 20px;
+        }
+    }
+}
+
+// swiperMedia
+.swiperMedia-area {
+    .btn-swiper-prev,
+    .btn-swiper-next {
+        height: 96px;
+    }
+
+    @include media-breakpoint-up(sm) {
+        .btn-swiper-prev,
+        .btn-swiper-next {
+            height: 116px;
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+        .btn-swiper-prev,
+        .btn-swiper-next {
+            height: 70px;
+            padding: 0 75px;
+        }
+    }
+
+    @include media-breakpoint-up(xl) {
+        .btn-swiper-prev,
+        .btn-swiper-next {
+            height: 89px;
+        }
+    }
+
+    @include media-breakpoint-up(xxl) {
+        .btn-swiper-prev,
+        .btn-swiper-next {
+            // height: 92px;
+            height: 100%;
+            padding: 0 70px;
+        }
+    }
+
+    @include media-breakpoint-up(xxxl) {
+        .btn-swiper-prev,
+        .btn-swiper-next {
+            // height: 118px;
+            padding: 0 80px;
         }
     }
 }

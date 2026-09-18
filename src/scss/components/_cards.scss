@@ -402,3 +402,148 @@
         }
     }
 }
+
+// cardMedia
+.cardMedia {
+  position: relative;
+  min-height: 535px;
+  overflow: hidden;
+  cursor: pointer;
+  background: #DDE7DD;
+  border-radius: 28px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+
+    background-image: var(--card-image);
+    background-size: cover;
+    background-position: center;
+
+    opacity: 0;
+    transform: scale(1.03);
+
+    transition:
+      opacity 0.5s ease,
+      transform 0.7s ease;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    background: rgba(0, 0, 0, 0.2);
+    opacity: 0;
+
+    transition: opacity 0.4s ease;
+  }
+
+  .card-body {
+    position: relative;
+    z-index: 2;
+    min-height: 535px;
+    padding: 40px 32px;
+  }
+
+  .card-title {
+    position: absolute;
+    top: 50%;
+    left: 32px;
+    right: 32px;
+
+    color: #8FA292;
+    font-size: 24px;
+    line-height: 1.3;
+    text-align: center;
+
+    transform: translateY(-50%);
+
+    transition:
+      top 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+      color 0.4s ease;
+  }
+
+  .card-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 72px;
+    height: 72px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+
+    transform: translate(-50%, -50%) scale(0.7);
+    opacity: 0;
+
+    transition:
+      opacity 0.4s ease,
+      transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+
+    span {
+      width: 0;
+      height: 0;
+      margin-left: 4px;
+
+      border-top: 9px solid transparent;
+      border-bottom: 9px solid transparent;
+      border-left: 14px solid #fff;
+    }
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      &::before {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      &::after {
+        opacity: 1;
+      }
+
+      .card-title {
+        top: 40px;
+        transform: translateY(0);
+        color: #fff;
+      }
+
+      .card-play {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }
+  }
+
+  @media (hover: none) {
+    &::before {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    &::after {
+      opacity: 1;
+    }
+
+    .card-title {
+      top: 32px;
+      transform: translateY(0);
+      color: #fff;
+    }
+
+    .card-play {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+}

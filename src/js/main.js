@@ -3,6 +3,21 @@
 document.addEventListener('DOMContentLoaded', function () {
 
     //////////////////////////////////////////////////////////////////
+    // [ WOW Animation ]
+
+    function initWow() {
+        const wow = new WOW({
+            boxClass: 'wow',
+            animateClass: 'animated',
+            offset: 100,
+            mobile: false,
+            live: true
+        });
+
+        wow.init();
+    }
+
+    //////////////////////////////////////////////////////////////////
     // [ Fixed Header ]
 
     function initFixedHeader() {
@@ -68,6 +83,29 @@ document.addEventListener('DOMContentLoaded', function () {
                     slideChange: function () {
                         currentCounter.textContent = this.realIndex + 1;
                     },
+                },
+            });
+        }
+
+        if (document.querySelector('.swiperMedia')) {
+
+            const mediaSlider = document.querySelector('.swiperMedia');
+            const mediaArea = mediaSlider.closest('.swiperMedia-area');
+
+            new Swiper(mediaSlider, {
+                slidesPerView: 1,
+                spaceBetween: 4,
+                loop: true,
+
+                navigation: {
+                    prevEl: mediaArea.querySelector('.btn-swiper-prev'),
+                    nextEl: mediaArea.querySelector('.btn-swiper-next'),
+                },
+
+                breakpoints: {
+                    768: { slidesPerView: 3 },
+                    1200: { slidesPerView: 4 },
+                    1900: { slidesPerView: 5 },
                 },
             });
         }
@@ -248,6 +286,7 @@ document.addEventListener('DOMContentLoaded', function () {
     //////////////////////////////////////////////////////////////////
     // [ Init All ]
 
+    initWow();
     initFixedHeader();
     initBackToTop();
     initSwipers();
