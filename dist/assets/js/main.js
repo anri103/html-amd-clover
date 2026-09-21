@@ -253,7 +253,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const defaults = {
             typeSpeed: 55,
-            initialCursorDelay: 1500,
+            initialCursorDelay: 900,
             pauseBeforeStrike: 350,
             pauseAfterStrike: 250,
             strikeThickness: 4,
@@ -284,6 +284,84 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     //////////////////////////////////////////////////////////////////
+    // [ Mobile Accordion Scroll ]
+
+    function initAccordionScroll() {
+        const mobileBreakpoint = 991;
+        const scrollOffset = 80; // Отступ сверху в px
+
+        const mediaQuery = window.matchMedia(
+            `(max-width: ${mobileBreakpoint}px)`
+        );
+
+        document.addEventListener('shown.bs.collapse', function (event) {
+            // Проверяем ширину окна непосредственно в момент открытия
+            if (!mediaQuery.matches) return;
+
+            const accordionItem = event.target.closest('.accordion-item');
+
+            if (!accordionItem) return;
+
+            // Небольшая задержка позволяет Bootstrap завершить
+            // изменение высоты accordion перед вычислением позиции.
+            requestAnimationFrame(function () {
+                const top = accordionItem.getBoundingClientRect().top
+                    + window.scrollY
+                    - scrollOffset;
+
+                window.scrollTo({
+                    top: Math.max(0, top),
+                    behavior: 'smooth'
+                });
+            });
+        });
+    }
+
+    //////////////////////////////////////////////////////////////////
+    // [ Landing Close Offcanvas after click link mobile menu ]
+
+    function initCloseOffcanvas() {
+        const scrollToTarget = (target) => {
+            const y = target.getBoundingClientRect().top + window.scrollY;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+        };
+
+        const offcanvasEl = document.getElementById('offcanvasMobileMenu');
+
+        document.addEventListener('click', (e) => {
+            const link = e.target.closest(
+                '#desktopNav a[href*="#"], #mobileNav a[href*="#"]'
+            );
+            if (!link) return;
+
+            const hash = link.hash;
+            if (!hash) return;
+
+            let target;
+            try {
+                target = document.querySelector(hash);
+            } catch {
+                return;
+            }
+            if (!target) return;
+
+            e.preventDefault();
+
+            const offcanvas = offcanvasEl && bootstrap.Offcanvas.getInstance(offcanvasEl);
+
+            if (offcanvas && offcanvasEl.classList.contains('show')) {
+                offcanvasEl.addEventListener('hidden.bs.offcanvas', () => {
+                    scrollToTarget(target);
+                }, { once: true });
+
+                offcanvas.hide();
+            } else {
+                scrollToTarget(target);
+            }
+        });
+    }
+
+    //////////////////////////////////////////////////////////////////
     // [ Init All ]
 
     initWow();
@@ -292,8 +370,11 @@ document.addEventListener('DOMContentLoaded', function () {
     initSwipers();
     initMasks();
     initFancybox();
+    initAccordionScroll();
+    initCloseOffcanvas();
+
     initHeroTypewriter('[data-typewriter]', {
-        initialCursorDelay: 3000,
+        initialCursorDelay: 900,
         strikeThickness: 4,
         strikeTop: 55,
         strikeInset: 4,
