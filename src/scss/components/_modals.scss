@@ -5,7 +5,7 @@
     --bs-modal-padding: 20px;
     --bs-modal-bg: #fff;
     --bs-modal-border-width: 0;
-    --bs-modal-border-radius: 12px;
+    --bs-modal-border-radius: 20px;
     --bs-modal-header-padding: 20px;
     --bs-modal-header-border-width: 0;
 
@@ -20,6 +20,11 @@
     @include media-breakpoint-up(xl) {
         --bs-modal-padding: 40px;
         --bs-modal-header-padding: 40px;
+        --bs-modal-border-radius: 40px;
+    }
+
+    @include media-breakpoint-up(xxxl) {
+        --bs-modal-border-radius: 60px;
     }
 }
 
@@ -31,6 +36,145 @@
     font-size: 16px;
 }
 
+// modalMainAction
+.modalMainAction {
+    --bs-modal-padding: 20px 16px;
+    --bs-modal-bg: #E8EFE8;
+
+    .modal-dialog {
+        max-width: 564px;
+        padding-right: 12px;
+        padding-left: 12px;
+    }
+
+    .bg-absolute-img {
+        position: absolute;
+        top: auto;
+        bottom: 0;
+        left: 0;
+        max-width: 100%;
+        height: auto;
+        pointer-events: none !important;
+    }
+
+    .modal-content {
+        overflow: hidden;
+    }
+
+    .modal-container {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .modal-body {
+        border-radius: var(--bs-modal-border-radius);
+        background-color: #E7EEE7;
+    }
+
+    .modal-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .modal-heading {
+        margin-bottom: 1.5rem;
+
+        &__title {
+            color: var(--bs-body-color);
+            font: normal 900 20px / 1.3 var(--ff-body);
+            margin-bottom: 0.625rem;
+        }
+
+        // &__subtitle {}
+    }
+
+    .modal-form {}
+
+    .modal-bottom {
+        margin-top: 1.5rem;
+
+        &__title {
+            font: normal 900 20px / 1.4 var(--ff-body);
+            margin-bottom: 0.625rem;
+        }
+
+        &__socials {
+            display: flex;
+            flex-direction: column;
+            gap: 0.625rem;
+        }
+    }
+
+    @include media-breakpoint-up(md) {
+        --bs-modal-padding: 30px 30px;
+
+        .modal-top {
+            margin-bottom: 1.875rem;
+        }
+
+        .modal-heading {
+            margin-bottom: 1.875rem;
+        }
+
+        .modal-bottom {
+            margin-top: 1.875rem;
+
+            &__socials {
+                flex-direction: row;
+
+                > .btn {
+                    flex-grow: 1;
+                }
+            }
+        }
+    }
+
+    @include media-breakpoint-up(xl) {
+        .modal-dialog {
+            max-width: 1240px;
+        }
+
+        .modal-container {
+            grid-template-columns: minmax(0, 1fr) 585px;
+        }
+
+        .modal-body {
+            background-color: #F6F9F6;
+        }
+
+        .modal-heading {
+            &__title {
+                font-size: 28px;
+            }
+
+            &__subtitle {
+                font-size: 20px;
+            }
+        }
+    }
+
+    @include media-breakpoint-up(xxl) {
+        --bs-modal-padding: 40px 40px;
+
+        .modal-dialog {
+            max-width: 1384px;
+        }
+
+        .modal-heading {
+            &__title {
+                font-size: 32px;
+            }
+        }
+    }
+
+    // @include media-breakpoint-up(xxxl) {}
+}
+
+// modalSuccess
 .modalSuccess {
 
     @include media-breakpoint-down(xl) {

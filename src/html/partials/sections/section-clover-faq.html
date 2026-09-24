@@ -3,7 +3,7 @@
     <div class="container-fluid">
 
         <div class="section__header">
-            <h2 class="section__title wow img-custom-anim-right">Вопросы <span class="text-accent">на которые у нас</span> есть ответы</h2>
+            <h2 class="section__title wow img-custom-anim-left">Вопросы <span class="text-accent">на которые у нас</span> есть ответы</h2>
         </div>
 
         <div class="section__body">
@@ -11,7 +11,18 @@
             <div class="faq-grid">
                 <!-- col -->
                 <div class="rounded-wrap video-wrap wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.1s">
-                    <img class="bg-video" src="assets/img/video/faq.webp" loading="lazy" alt="">
+                    <!-- <img class="bg-video" src="assets/img/video/faq.webp" loading="lazy" alt=""> -->
+                    <video
+                        class="video-shape"
+                        data-decor-video="once"
+                        muted
+                        playsinline
+                        preload="metadata"
+                        aria-hidden="true"
+                    >
+                        <source src="assets/img/video/faq.webm" type="video/webm">
+                        <source src="assets/img/video/faq.mp4" type="video/mp4">
+                    </video>
                 </div>
                 <!-- col -->
                 <!-- accordion -->

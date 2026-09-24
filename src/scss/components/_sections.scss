@@ -126,9 +126,10 @@
         padding-bottom: 40px;
         padding-left: 1rem;
         padding-right: 1rem;
+        background-color: #e5ece4;
     }
 
-    .hero-bg-object {
+    .video-shape-wrapper {
         position: absolute;
         bottom: 0;
         right: 0;
@@ -136,27 +137,10 @@
         pointer-events: none; // исключает любые клики/тапы по видео
     }
 
-    .hero-bg-video {
+    .video-shape {
         width: 680px;
         max-width: 100%;
         height: auto;
-        display: block;
-        pointer-events: none;
-        -webkit-user-select: none;
-        user-select: none;
-    }
-
-    // Chrome/Safari/Edge (webkit) — скрываем любые нативные оверлеи на случай,
-    // если браузер всё же попытается показать кнопку play при блокировке автоплея
-    .hero-bg-video::-webkit-media-controls,
-    .hero-bg-video::-webkit-media-controls-enclosure,
-    .hero-bg-video::-webkit-media-controls-panel,
-    .hero-bg-video::-webkit-media-controls-play-button,
-    .hero-bg-video::-webkit-media-controls-start-playback-button {
-        display: none !important;
-        -webkit-appearance: none !important;
-        opacity: 0 !important;
-        pointer-events: none !important;
     }
 
     .hero-title {
@@ -170,9 +154,20 @@
             color: #506D50;
         }
 
+        [data-typewriter] {
+            visibility: hidden;
+        }
+        [data-typewriter].is-typing {
+            visibility: visible;
+        }
+
         .js-letter {
             opacity: 0;
             transition: opacity .05s linear;
+
+            &.is-visible {
+                opacity: 1;
+            }
         }
 
         // курсор
@@ -273,6 +268,23 @@
         }
     }
 
+    .hero-arrow-down {
+        position: absolute;
+        right: 20px;
+        bottom: 30px;
+    }
+
+    .side-title {
+        position: absolute;
+        left: calc(100% - 35px);
+        bottom: 86px;
+        transform: rotate(-90deg);
+        transform-origin: left bottom;
+        color: #8E958E;
+        font: normal 500 6px / 1.2 var(--ff-title);
+        white-space: nowrap;
+    }
+
     @include media-breakpoint-up(sm) {
         padding-top: 12px;
 
@@ -296,6 +308,17 @@
             padding-left: 2.5rem;
             padding-right: 2.5rem;
         }
+
+        .hero-arrow-down {
+            right: 36px;
+            bottom: 40px;
+        }
+
+        .side-title {
+            font-size: 8px;
+            left: calc(100% - 51px);
+            bottom: 96px;
+        }
     }
 
     @include media-breakpoint-up(lg) {
@@ -304,7 +327,7 @@
             padding-top: 120px;
         }
 
-        .hero-bg-video {
+        .video-shape {
             width: 500px;
         }
 
@@ -319,7 +342,7 @@
             padding-top: 200px;
         }
 
-        .hero-bg-video {
+        .video-shape {
             width: 680px;
         }
 
@@ -329,6 +352,17 @@
 
         .hero-subtitle {
             max-width: 620px;
+        }
+
+        .hero-arrow-down {
+            right: 50%;
+            transform: translateX(50%);
+        }
+
+        .side-title {
+            font-size: 10px;
+            left: calc(100% - 38px);
+            bottom: 120px;
         }
     }
 
@@ -350,6 +384,11 @@
             max-width: 733px;
             font-size: 22px;
         }
+
+        .side-title {
+            font-size: 12px;
+            left: calc(100% - 56px);
+        }
     }
 
     @include media-breakpoint-up(xxxl) {
@@ -361,7 +400,7 @@
             padding-right: 5rem;
         }
 
-        .hero-bg-video {
+        .video-shape {
             width: 860px;
         }
 
@@ -376,6 +415,11 @@
         .hero-subtitle {
             font-size: 28px;
         }
+
+        .side-title {
+            font-size: 14px;
+            left: calc(100% - 76px);
+        }
     }
 
     @include media-breakpoint-up(xxxxl) {
@@ -384,7 +428,7 @@
             padding-top: 294px;
         }
 
-        .hero-bg-video {
+        .video-shape {
             width: 980px;
         }
 
@@ -453,17 +497,13 @@
         max-width: 240px;
     }
 
-    .bg-video-shape {
+    .video-shape {
         position: absolute;
         bottom: 100%;
         right: -20px;
         width: 180px;
         max-width: 100%;
         height: auto;
-        display: block;
-        pointer-events: none;
-        -webkit-user-select: none;
-        user-select: none;
         z-index: -1;
     }
 
@@ -472,7 +512,7 @@
             max-width: 260px;
         }
 
-        .bg-video-shape {
+        .video-shape {
             width: 200px;
         }
     }
@@ -486,7 +526,7 @@
             max-width: 520px;
         }
 
-        .bg-video-shape {
+        .video-shape {
             width: 280px;
             right: 0;
         }
@@ -501,7 +541,7 @@
             max-width: 680px;
         }
 
-        .bg-video-shape {
+        .video-shape {
             width: 260px;
         }
     }
@@ -513,7 +553,7 @@
     }
 
     @include media-breakpoint-up(xxl) {
-        .bg-video-shape {
+        .video-shape {
             width: 320px;
         }
     }
@@ -527,13 +567,13 @@
             max-width: 900px;
         }
 
-        .bg-video-shape {
+        .video-shape {
             width: 400px;
         }
     }
 
     @include media-breakpoint-up(xxxxl) {
-        .bg-video-shape {
+        .video-shape {
             width: 440px;
             right: 140px;
         }
@@ -558,7 +598,7 @@
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
-        background-color: #e6ebe6;
+        background-color: #e8f0e8;
     }
 
     .bg-video {

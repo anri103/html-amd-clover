@@ -27,3 +27,26 @@
         border-radius: 60px;
     }
 }
+
+.video-shape {
+    display: block;
+    pointer-events: none;
+    user-select: none;
+
+    // На случай iOS/Safari
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}
+
+// Chrome/Safari/Edge (webkit) — скрываем любые нативные оверлеи на случай,
+// если браузер всё же попытается показать кнопку play при блокировке автоплея
+.video-shape::-webkit-media-controls,
+.video-shape::-webkit-media-controls-enclosure,
+.video-shape::-webkit-media-controls-panel,
+.video-shape::-webkit-media-controls-play-button,
+.video-shape::-webkit-media-controls-start-playback-button {
+    display: none !important;
+    -webkit-appearance: none !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}

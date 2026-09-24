@@ -108,13 +108,13 @@
 @keyframes img-anim-right {
     0% {
         transform: translateX(5%);
-        clip-path: inset(0 0 0 100%);
+        clip-path: inset(-0.3em 0 0 100%); /* отрицательный отступ сверху убирает обрезку надстрочных элементов */
         opacity: 0;
     }
 
     100% {
         transform: translateX(0);
-        clip-path: inset(0 0 0 0);
+        clip-path: inset(-0.3em 0 0 0); /* отрицательный отступ сверху убирает обрезку надстрочных элементов */
         opacity: 1;
     }
 }
@@ -128,13 +128,13 @@
 @keyframes img-anim-left {
     0% {
         transform: translateX(-5%);
-        clip-path: inset(0 100% 0 0);
+        clip-path: inset(-0.3em 100% 0 0); /* отрицательный отступ сверху убирает обрезку надстрочных элементов */
         opacity: 0;
     }
 
     100% {
         transform: translateX(0);
-        clip-path: inset(0 0 0 0);
+        clip-path: inset(-0.3em 0 0 0); /* отрицательный отступ сверху убирает обрезку надстрочных элементов */
         opacity: 1;
     }
 }
