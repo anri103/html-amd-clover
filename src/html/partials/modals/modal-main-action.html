@@ -22,26 +22,98 @@
                         <!-- form -->
                         <form action="#">
                             <div class="d-grid grid-cols-1 gap-3">
-                                <div class="col-span-1">
-                                    <div class="d-flex flex-wrap align-items-center gap-2">
-                                        <button type="button" class="btn btn-small btn-light active" data-bs-toggle="button">Телефон</button>
-                                        <button type="button" class="btn btn-small btn-light" data-bs-toggle="button">Почта</button>
+                                <div class="col-span-1 mb-3">
+                                    <div class="modal-form__communication-list">
+                                        <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" checked>
+                                        <label class="btn btn-small btn-light" for="option1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                                <path d="M4.16667 3.33334H7.5L9.16667 7.50001L7.08333 8.75001C7.9758 10.5596 9.44039 12.0242 11.25 12.9167L12.5 10.8333L16.6667 12.5V15.8333C16.6667 16.2754 16.4911 16.6993 16.1785 17.0119C15.866 17.3244 15.442 17.5 15 17.5C11.7494 17.3025 8.68346 15.9221 6.38069 13.6193C4.07792 11.3166 2.69754 8.25062 2.5 5.00001C2.5 4.55798 2.67559 4.13406 2.98816 3.8215C3.30072 3.50894 3.72464 3.33334 4.16667 3.33334Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                            Телефон
+                                        </label>
+
+                                        <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off">
+                                        <label class="btn btn-small btn-light" for="option2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                                <path d="M2.5 5.83332C2.5 5.3913 2.67559 4.96737 2.98816 4.65481C3.30072 4.34225 3.72464 4.16666 4.16667 4.16666H15.8333C16.2754 4.16666 16.6993 4.34225 17.0118 4.65481C17.3244 4.96737 17.5 5.3913 17.5 5.83332V14.1667C17.5 14.6087 17.3244 15.0326 17.0118 15.3452C16.6993 15.6577 16.2754 15.8333 15.8333 15.8333H4.16667C3.72464 15.8333 3.30072 15.6577 2.98816 15.3452C2.67559 15.0326 2.5 14.6087 2.5 14.1667V5.83332Z" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M2.5 5.83334L10 10.8333L17.5 5.83334" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                            Почта
+                                        </label>
+
+                                        <input type="radio" class="btn-check" name="options" id="option3" autocomplete="off">
+                                        <label class="btn btn-small btn-light" for="option3">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 30 30" fill="none">
+                                                <path d="M0.148438 14.4C0.148438 7.61178 0.148438 4.21767 2.23639 2.10883C4.32435 0 7.68485 0 14.4059 0H15.594C22.315 0 25.6755 0 27.7635 2.10883C29.8514 4.21767 29.8514 7.61178 29.8514 14.4V15.6C29.8514 22.3882 29.8514 25.7823 27.7635 27.8912C25.6755 30 22.315 30 15.594 30H14.4059C7.68485 30 4.32435 30 2.23639 27.8912C0.148438 25.7823 0.148438 22.3882 0.148438 15.6V14.4Z" fill="#0077FF"/>
+                                                <path d="M15.953 21.6126C9.18315 21.6126 5.32179 16.9251 5.16089 9.12512H8.55199C8.66337 14.8501 11.1633 17.2751 13.1435 17.7751V9.12512H16.3367V14.0626C18.2921 13.8501 20.3463 11.6001 21.0394 9.12512H24.2326C23.7004 12.1751 21.4727 14.4251 19.8885 15.3501C21.4727 16.1001 24.0099 18.0626 24.9753 21.6126H21.4603C20.7053 19.2376 18.8243 17.4001 16.3367 17.1501V21.6126H15.953Z" fill="white"/>
+                                            </svg>
+                                            ВК
+                                        </label>
+
+                                        <input type="radio" class="btn-check" name="options" id="option4" autocomplete="off">
+                                        <label class="btn btn-small btn-light" for="option4">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" fill="none">
+                                                <g clip-path="url(#clip0_62_650)">
+                                                    <path d="M24.0102 0H7.98979C3.57715 0 0 3.57715 0 7.98979V24.0102C0 28.4228 3.57715 32 7.98979 32H24.0102C28.4228 32 32 28.4228 32 24.0102V7.98979C32 3.57715 28.4228 0 24.0102 0Z" fill="url(#paint0_linear_62_650)"/>
+                                                    <path d="M24.0102 0H7.98979C3.57715 0 0 3.57715 0 7.98979V24.0102C0 28.4228 3.57715 32 7.98979 32H24.0102C28.4228 32 32 28.4228 32 24.0102V7.98979C32 3.57715 28.4228 0 24.0102 0Z" fill="url(#paint1_radial_62_650)"/>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.2626 28.1067C13.8624 28.1067 12.747 27.7563 10.8081 26.3547C9.58175 27.9315 5.6982 29.1638 5.52882 27.0555C5.52882 25.4729 5.17842 24.1356 4.7813 22.6756C4.30828 20.8769 3.771 18.8738 3.771 15.9713C3.771 9.03929 9.45912 3.82422 16.1984 3.82422C22.9435 3.82422 28.2287 9.29625 28.2287 16.0355C28.2513 22.6706 22.8977 28.0713 16.2626 28.1067ZM16.3619 9.81599C13.0799 9.64665 10.522 11.9184 9.95551 15.4808C9.48831 18.4299 10.3176 22.0215 11.0242 22.2084C11.3629 22.2901 12.2156 21.601 12.747 21.0696C13.6258 21.6767 14.6491 22.0413 15.7137 22.1266C19.1145 22.2902 22.0203 19.7012 22.2486 16.3042C22.3815 12.9 19.7632 10.0167 16.3619 9.82185V9.81599Z" fill="white"/>
+                                                </g>
+                                                <defs>
+                                                    <linearGradient id="paint0_linear_62_650" x1="3.7711" y1="24.3372" x2="32" y2="16" gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="#44CCFF"/>
+                                                    <stop offset="0.662" stop-color="#5533EE"/>
+                                                    <stop offset="1" stop-color="#9933DD"/>
+                                                    </linearGradient>
+                                                    <radialGradient id="paint1_radial_62_650" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(-0.761305 -14.0539) rotate(51.356) scale(38.8325 16)">
+                                                    <stop stop-color="#0000FF"/>
+                                                    <stop offset="1" stop-opacity="0"/>
+                                                    </radialGradient>
+                                                    <clipPath id="clip0_62_650">
+                                                    <rect width="32" height="32" fill="white"/>
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            Макс
+                                        </label>
+
+                                        <input type="radio" class="btn-check" name="options" id="option5" autocomplete="off">
+                                        <label class="btn btn-small btn-light" for="option5">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" fill="none">
+                                                <g clip-path="url(#clip0_62_658)">
+                                                    <g clip-path="url(#clip1_62_658)">
+                                                    <path d="M16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16C0 24.8366 7.16344 32 16 32Z" fill="#039BE5"/>
+                                                    <path d="M7.32144 15.6531L22.7481 9.70512C23.4641 9.44645 24.0894 9.87979 23.8574 10.9625L23.8588 10.9611L21.2321 23.3358C21.0374 24.2131 20.5161 24.4265 19.7868 24.0131L15.7868 21.0651L13.8574 22.9238C13.6441 23.1371 13.4641 23.3171 13.0508 23.3171L13.3348 19.2465L20.7481 12.5491C21.0708 12.2651 20.6761 12.1051 20.2508 12.3878L11.0894 18.1558L7.14011 16.9238C6.28277 16.6518 6.26411 16.0665 7.32144 15.6531Z" fill="white"/>
+                                                    </g>
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_62_658">
+                                                    <rect width="32" height="32" rx="16" fill="white"/>
+                                                    </clipPath>
+                                                    <clipPath id="clip1_62_658">
+                                                    <rect width="32" height="32" fill="white"/>
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                            Телеграм
+                                        </label>
                                     </div>
                                 </div>
                                 <div class="col-span-1">
-                                    <input type="text" class="form-control input-l maskPhone" placeholder="+7 (___) ___-__-__">
+                                    <input type="text" class="form-control form-control-lg maskPhone" placeholder="+7 (___) ___-__-__">
                                 </div>
                                 <div class="col-span-1">
-                                    <input type="text" class="form-control input-l" placeholder="Ваше имя">
+                                    <input type="text" class="form-control form-control-lg" placeholder="Ваше имя">
                                 </div>
-                                <div class="col-span-1">
-                                    <div class="form-check">
-                                        <input type="checkbox" class="form-check-input" id="consultationCheck">
-                                        <label class="form-check-label fs-x-small" for="consultationCheck">Я даю своё согласие на&nbsp;обработку персональных данных и&nbsp;соглашаюсь с&nbsp;<a href="#">политикой конфиденциальности</a></label>
+                                <div class="col-span-1 mt-3">
+                                    <div class="border rounded-3 p-6">
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" id="consultationCheck">
+                                            <label class="form-check-label" for="consultationCheck">Я даю своё согласие на&nbsp;обработку персональных данных и&nbsp;соглашаюсь с&nbsp;<a href="#">политикой конфиденциальности</a></label>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-span-1">
-                                    <a href="#" class="btn btn-primary w-100 disabled" disabled>Обсудить проект</a>
+                                <div class="col-span-1 mt-3">
+                                    <button type="submit" class="btn btn-big btn-primary w-100" disabled>Обсудить проект</button>
                                 </div>
                             </div>
                         </form>
@@ -49,15 +121,15 @@
                     <div class="modal-bottom">
                         <div class="modal-bottom__title">Или напишите нам:</div>
                         <div class="modal-bottom__socials">
-                            <a href="#" class="btn btn-social-modal btn-outline-primary">
+                            <a href="#" class="btn btn-big btn-social-modal btn-outline-primary">
                                 <img class="inline-icon" src="assets/img/icons/social-color-max.svg" width="30" height="30" alt="MAX">
                                 Макс
                             </a>
-                            <a href="#" class="btn btn-social-modal btn-outline-primary">
+                            <a href="#" class="btn btn-big btn-social-modal btn-outline-primary">
                                 <img class="inline-icon" src="assets/img/icons/social-color-vk.svg" width="30" height="30" alt="VK">
                                 Вконтакте
                             </a>
-                            <a href="#" class="btn btn-social-modal btn-outline-primary">
+                            <a href="#" class="btn btn-big btn-social-modal btn-outline-primary">
                                 <img class="inline-icon" src="assets/img/icons/social-color-tg.svg" width="30" height="30" alt="Telegram">
                                 Телеграм
                             </a>

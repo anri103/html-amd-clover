@@ -14,7 +14,8 @@
     }
 
     .form-control {
-        background-color: #F6F4F3;
+        border-color: #DDE7DD;
+        background-color: #fff;
     }
 
     @include media-breakpoint-up(xl) {
@@ -88,11 +89,23 @@
             font: normal 900 20px / 1.3 var(--ff-body);
             margin-bottom: 0.625rem;
         }
-
-        // &__subtitle {}
     }
 
-    .modal-form {}
+    .modal-form {
+        &__communication-list {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 4px;
+
+            .btn-small {
+                --bs-btn-padding-x: 0.625rem;
+                min-height: 40px;
+                gap: 4px;
+                text-transform: none;
+            }
+        }
+    }
 
     .modal-bottom {
         margin-top: 1.5rem;
@@ -103,9 +116,38 @@
         }
 
         &__socials {
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: 1fr;
             gap: 0.625rem;
+
+            .btn-big {
+                --bs-btn-padding-x: 1rem;
+                --bs-btn-font-size: 16px;
+                --bs-btn-border-width: 1px;
+                --bs-btn-border-radius: 1rem;
+                min-height: 58px;
+            }
+        }
+    }
+
+    @include media-breakpoint-down(xl) {
+        .modal-form {
+            &__communication-list {
+                .btn-light {
+                    --bs-btn-color: var(--bs-body-color);
+                    --bs-btn-bg: #F6F9F6;
+                    --bs-btn-border-color: #F6F9F6;
+                    --bs-btn-hover-color: #F8FEFF;
+                    --bs-btn-hover-bg: var(--bs-primary);
+                    --bs-btn-hover-border-color: var(--bs-primary);
+                    --bs-btn-active-color: #F8FEFF;
+                    --bs-btn-active-bg: var(--bs-primary);
+                    --bs-btn-active-border-color: var(--bs-primary);
+                    --bs-btn-disabled-color: #F8FEFF;
+                    --bs-btn-disabled-bg: var(--bs-primary);
+                    --bs-btn-disabled-border-color: var(--bs-primary);
+                }
+            }
         }
     }
 
@@ -124,11 +166,7 @@
             margin-top: 1.875rem;
 
             &__socials {
-                flex-direction: row;
-
-                > .btn {
-                    flex-grow: 1;
-                }
+                grid-template-columns: repeat(3, minmax(0, 1fr));
             }
         }
     }
