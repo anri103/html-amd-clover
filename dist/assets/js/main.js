@@ -92,21 +92,24 @@ document.addEventListener('DOMContentLoaded', function () {
             const mediaSlider = document.querySelector('.swiperMedia');
             const mediaArea = mediaSlider.closest('.swiperMedia-area');
 
-            new Swiper(mediaSlider, {
+            const swiper = new Swiper(mediaSlider, {
                 slidesPerView: 1,
                 spaceBetween: 4,
                 loop: true,
-
-                navigation: {
-                    prevEl: mediaArea.querySelector('.btn-swiper-prev'),
-                    nextEl: mediaArea.querySelector('.btn-swiper-next'),
-                },
 
                 breakpoints: {
                     768: { slidesPerView: 3 },
                     1200: { slidesPerView: 4 },
                     1900: { slidesPerView: 5 },
                 },
+            });
+
+            mediaArea.querySelectorAll('.btn-swiper-prev').forEach(button => {
+                button.addEventListener('click', () => swiper.slidePrev());
+            });
+
+            mediaArea.querySelectorAll('.btn-swiper-next').forEach(button => {
+                button.addEventListener('click', () => swiper.slideNext());
             });
         }
 
@@ -497,6 +500,90 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    //////////////////////////////////////////////////////////////////
+    // [ Decor Videos ]
+
+    function initCardMagneticPlayBtn() {
+        const magneticCards = document.querySelectorAll('.cardMedia');
+
+        const desktopMedia = window.matchMedia('(min-width: 1200px)');
+
+        if (desktopMedia.matches) {
+        magneticCards.forEach((card) => {
+            const button = card.querySelector('.card-play');
+
+            if (!button) {
+            return;
+            }
+
+            const distance = Number(
+            button.dataset.magneticDistance || 50
+            );
+
+            const strength = Number(
+            button.dataset.magneticStrength || 0.35
+            );
+
+            let animationFrame;
+
+            card.addEventListener('mousemove', (event) => {
+            cancelAnimationFrame(animationFrame);
+
+            animationFrame = requestAnimationFrame(() => {
+                const rect = button.getBoundingClientRect();
+
+                const closestX = Math.max(
+                rect.left,
+                Math.min(event.clientX, rect.right)
+                );
+
+                const closestY = Math.max(
+                rect.top,
+                Math.min(event.clientY, rect.bottom)
+                );
+
+                const diffX = event.clientX - closestX;
+                const diffY = event.clientY - closestY;
+
+                const currentDistance = Math.sqrt(
+                diffX * diffX + diffY * diffY
+                );
+
+                if (currentDistance > distance) {
+                button.style.setProperty('--magnetic-x', '0px');
+                button.style.setProperty('--magnetic-y', '0px');
+
+                return;
+                }
+
+                const centerX = rect.left + rect.width / 2;
+                const centerY = rect.top + rect.height / 2;
+
+                const moveX = (event.clientX - centerX) * strength;
+                const moveY = (event.clientY - centerY) * strength;
+
+                button.style.setProperty(
+                '--magnetic-x',
+                `${moveX}px`
+                );
+
+                button.style.setProperty(
+                '--magnetic-y',
+                `${moveY}px`
+                );
+            });
+            });
+
+            card.addEventListener('mouseleave', () => {
+            cancelAnimationFrame(animationFrame);
+
+            button.style.setProperty('--magnetic-x', '0px');
+            button.style.setProperty('--magnetic-y', '0px');
+            });
+        });
+        }
+    }
+
 
     //////////////////////////////////////////////////////////////////
     // [ Init All ]
@@ -513,5 +600,6 @@ document.addEventListener('DOMContentLoaded', function () {
     initStrikeAnimations();
     initTypewriterAnimations();
     initDecorVideos();
+    initCardMagneticPlayBtn();
 
 });
