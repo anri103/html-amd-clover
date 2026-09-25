@@ -426,12 +426,37 @@ document.addEventListener('DOMContentLoaded', function () {
     //////////////////////////////////////////////////////////////////
     // [ Decor Videos ]
 
-        function initDecorVideos() {
+    function initDecorVideos() {
         const videos = document.querySelectorAll('[data-decor-video]');
 
         if (!videos.length) {
             return;
         }
+
+        videos.forEach(function (video) {
+            // Важно для iOS Safari
+            video.muted = true;
+            video.defaultMuted = true;
+            video.playsInline = true;
+            video.controls = false;
+
+            // Явно устанавливаем HTML attributes
+            video.setAttribute('muted', '');
+            video.setAttribute('playsinline', '');
+            video.setAttribute('webkit-playsinline', '');
+            video.setAttribute('disablepictureinpicture', '');
+            video.setAttribute('controlslist', 'nodownload nofullscreen noremoteplayback');
+
+            // На случай, если autoplay не был указан в HTML
+            video.setAttribute('autoplay', '');
+
+            if (video.dataset.decorVideo === 'once') {
+                video.addEventListener('ended', function () {
+                    // Оставляем видео на последнем кадре
+                    video.pause();
+                });
+            }
+        });
 
         const observer = new IntersectionObserver(
             function (entries) {
@@ -439,63 +464,61 @@ document.addEventListener('DOMContentLoaded', function () {
                     const video = entry.target;
                     const type = video.dataset.decorVideo;
 
-                    if (!entry.isIntersecting) {
-                        return;
-                    }
+                    if (entry.isIntersecting) {
+                        // --------------------------------------------------
+                        // LOOP
 
-                    // --------------------------------------------------
-                    // Loop
-
-                    if (type === 'loop') {
-                        video.play().catch(function (error) {
-                            console.warn('Video play failed:', error);
-                        });
-
-                        return;
-                    }
-
-                    // --------------------------------------------------
-                    // Once
-
-                    if (type === 'once') {
-                        if (video.dataset.played === 'true') {
-                            return;
+                        if (type === 'loop') {
+                            video.play().catch(function () {});
                         }
 
-                        const playVideo = function () {
+                        // --------------------------------------------------
+                        // ONCE
+
+                        if (type === 'once') {
+                            if (video.dataset.played === 'true') {
+                                return;
+                            }
+
                             video.play()
                                 .then(function () {
                                     video.dataset.played = 'true';
                                 })
-                                .catch(function (error) {
-                                    console.warn('Video play failed:', error);
+                                .catch(function () {
+                                    // Safari может ещё не успеть загрузить видео.
+                                    // Попробуем после canplay.
+                                    video.addEventListener(
+                                        'canplay',
+                                        function () {
+                                            video.play()
+                                                .then(function () {
+                                                    video.dataset.played = 'true';
+                                                })
+                                                .catch(function () {});
+                                        },
+                                        { once: true }
+                                    );
                                 });
-                        };
-
-                        // Если видео уже готово к воспроизведению
-                        if (video.readyState >= 3) {
-                            playVideo();
-                        } else {
-                            // Ждём, пока браузер сможет его воспроизвести
-                            video.addEventListener(
-                                'canplay',
-                                playVideo,
-                                { once: true }
-                            );
                         }
+
+                        return;
+                    }
+
+                    // --------------------------------------------------
+                    // OUT OF VIEWPORT
+
+                    if (type === 'loop') {
+                        video.pause();
                     }
                 });
             },
             {
-                threshold: 0.3
+                threshold: 0,
+                rootMargin: '0px 0px -10% 0px'
             }
         );
 
         videos.forEach(function (video) {
-            video.controls = false;
-            video.muted = true;
-            video.playsInline = true;
-
             observer.observe(video);
         });
     }
