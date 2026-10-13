@@ -902,3 +902,27 @@
         }
     }
 }
+
+/*------------------------------------------------------------------
+[ section-cloverAdvantages ]*/
+
+.section-cloverAdvantages {
+
+    .advantages-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 4px;
+    }
+
+    @include media-breakpoint-up(xxl) {
+        .advantages-grid {
+            grid-template-columns: minmax(0, 1fr) 380px;
+        }
+    }
+
+    @include media-breakpoint-up(xxxl) {
+        .advantages-grid {
+            grid-template-columns: minmax(0, 1fr) 480px;
+        }
+    }
+}
