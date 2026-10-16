@@ -640,6 +640,88 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    /**
+   * initPreloader — запускает прелоадер.
+   * Прогресс плавно растёт до 90%, пока страница грузится,
+   * после window.load доходит до 100% и прелоадер скрывается.
+   *
+   * Параметры:
+   *  - selector: селектор корневого элемента
+   *  - minTime:  минимальное время показа, мс
+   *  - onDone:   колбэк после скрытия
+   *
+   * Возвращает { set(percent) } — для ручного управления прогрессом.
+   */
+    function initPreloader({ selector = '#preloader', minTime = 1500, onDone } = {}) {
+        const root = document.querySelector(selector);
+        if (!root) return null;
+    
+        const fill = root.querySelector('.preloader__fill');
+        const label = root.querySelector('.preloader__percent');
+    
+        // Контур клевера занимает x ≈ 19.4…180.5 из 200 (в %)
+        const SHAPE_START = 9.7;
+        const SHAPE_WIDTH = 80.6;
+    
+        let shown = 0;      // отображаемое значение
+        let target = 0;     // к чему стремимся
+        let loaded = false;
+        let finished = false;
+        const startedAt = performance.now();
+    
+        function render(p) {
+        const value = Math.round(p);
+        const right = 100 - (SHAPE_START + (p / 100) * SHAPE_WIDTH);
+        fill.style.clipPath = `inset(0 ${right}% 0 0)`;
+        label.textContent = value + '%';
+        root.setAttribute('aria-valuenow', value);
+        }
+    
+        function finish() {
+        if (finished) return;
+        finished = true;
+        root.classList.add('is-hidden');
+        root.addEventListener('transitionend', () => {
+            root.remove();
+            if (typeof onDone === 'function') onDone();
+        }, { once: true });
+        }
+    
+        function tick() {
+        const elapsed = performance.now() - startedAt;
+    
+        // пока грузится — идём к 90%, по времени minTime
+        const timeCap = Math.min(elapsed / minTime, 1) * 90;
+        target = loaded && elapsed >= minTime ? 100 : Math.min(target, timeCap);
+        if (!loaded) target = Math.max(target, timeCap);
+    
+        // плавное приближение к target
+        shown += (target - shown) * 0.12;
+        if (Math.abs(target - shown) < 0.1) shown = target;
+        render(shown);
+    
+        if (shown >= 100) {
+            setTimeout(finish, 250);
+            return;
+        }
+        requestAnimationFrame(tick);
+        }
+    
+        function onLoad() {
+        loaded = true;
+        }
+        if (document.readyState === 'complete') onLoad();
+        else window.addEventListener('load', onLoad, { once: true });
+    
+        render(0);
+        requestAnimationFrame(tick);
+    
+        return {
+        // ручное управление: preloader.set(50)
+        set(percent) { target = Math.max(0, Math.min(100, percent)); }
+        };
+    }
+
 
     //////////////////////////////////////////////////////////////////
     // [ Init All ]
@@ -658,5 +740,6 @@ document.addEventListener('DOMContentLoaded', function () {
     initDecorVideos();
     initCardMagneticPlayBtn();
     initConfetti();
+    initPreloader();
 
 });
