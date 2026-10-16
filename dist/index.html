@@ -98,7 +98,7 @@
                                     </a>
                                 </div>
                                 <!-- sign-btn -->
-                                <a href="#modalMainAction" data-bs-toggle="modal" class="btn btn-small btn-primary">Оставить заявку</a>
+                                <a href="#modalCloverMainAction" data-bs-toggle="modal" class="btn btn-small btn-primary">Оставить заявку</a>
                             </div>
                         </div>
     
@@ -221,7 +221,7 @@
                             Почта
                         </a>
                     </div>
-                    <a href="#modalMainAction" data-bs-toggle="modal" class="btn btn-big btn-primary w-100">Оставить заявку</a>
+                    <a href="#modalCloverMainAction" data-bs-toggle="modal" class="btn btn-big btn-primary w-100">Оставить заявку</a>
                 </div>
 
             </div>
@@ -418,7 +418,7 @@
                             </div>
                             <div class="card-description">В результате у вас появляется понятный план: что и как создавать с нуля, что улучшать в существующем проекте и какие шаги дадут рост в первую очередь</div>
                         </div>
-                        <a href="#" class="btn btn-big btn-outline-primary w-100">Начать с бесплатного аудита</a>
+                        <a href="#modalCloverMainAction" data-bs-toggle="modal" class="btn btn-big btn-outline-primary w-100">Начать с бесплатного аудита</a>
                     </div>
                     <img class="bg-shape" src="assets/img/home/system-ico-1.png" alt="">
                 </div>
@@ -440,7 +440,7 @@
                             </div>
                             <div class="card-description">На выходе — цифровой продукт, который работает на продажи: привлекает внимание, убеждает, снимает сомнения и помогает превращать пользователей в клиентов</div>
                         </div>
-                        <a href="#" class="btn btn-big btn-outline-primary w-100">СОЗДАТЬ ПРОЕКТ</a>
+                        <a href="#modalCloverMainAction" data-bs-toggle="modal" class="btn btn-big btn-outline-primary w-100">СОЗДАТЬ ПРОЕКТ</a>
                     </div>
                     <img class="bg-shape" src="assets/img/home/system-ico-2.png" alt="">
                 </div>
@@ -464,7 +464,7 @@
                             </div>
                             <div class="card-description">На выходе — понятная система продвижения: видно, какие каналы дают заявки, где сайт теряет пользователей и куда направлять бюджет, чтобы усиливать то, что действительно работает</div>
                         </div>
-                        <a href="#" class="btn btn-big btn-outline-primary w-100">Привести клиентов</a>
+                        <a href="#modalCloverMainAction" data-bs-toggle="modal" class="btn btn-big btn-outline-primary w-100">Привести клиентов</a>
                     </div>
                     <img class="bg-shape" src="assets/img/home/system-ico-3.png" alt="">
                 </div>
@@ -486,7 +486,7 @@
                             </div>
                             <div class="card-description">Так ваш проект развивается вместе с бизнесом: становится точнее, понятнее и эффективнее. Мы следим за его работой, дорабатываем при необходимости и продолжаем искать новые точки роста</div>
                         </div>
-                        <a href="#" class="btn btn-big btn-outline-primary w-100">Усилить систему</a>
+                        <a href="#modalCloverMainAction" data-bs-toggle="modal" class="btn btn-big btn-outline-primary w-100">Усилить систему</a>
                     </div>
                     <img class="bg-shape" src="assets/img/home/system-ico-4.png" alt="">
                 </div>
@@ -565,7 +565,7 @@
                             <p><b>Чем&nbsp;дальше по&nbsp;системе&nbsp;— тем&nbsp;выгоднее</b></p>
                         </div>
                         <div>
-                            <button type="button" class="btn btn-big btn-primary w-100">Пора собирать систему</button>
+                            <a href="#modalCloverMainAction" data-bs-toggle="modal" class="btn btn-big btn-primary w-100">Пора собирать систему</a>
                         </div>
                     </div>
                 </div>
@@ -945,7 +945,7 @@
     
                 <div class="cta-bottom">
                     <div class="btn-wrap">
-                        <a href="#modalMainAction" data-bs-toggle="modal" class="btn btn-big btn-primary w-100">Начать с аудита</a>
+                        <a href="#modalCloverMainAction" data-bs-toggle="modal" class="btn btn-big btn-primary w-100">Начать с аудита</a>
                     </div>
         
                     <div class="d-flex justify-content-lg-end">
@@ -1608,7 +1608,7 @@
     </button> -->
 
     <!-- modal-main-action -->
-    <div class="modal modalMainAction fade" id="modalMainAction" aria-hidden="true" tabindex="-1">
+    <div class="modal modalMainAction modalCloverMainAction fade" id="modalCloverMainAction" aria-hidden="true" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-container">
@@ -1723,7 +1723,7 @@
                                     </div>
                                 </div>
                                 <div class="col-span-1 mt-3">
-                                    <button type="submit" class="btn btn-big btn-primary w-100" disabled>Обсудить проект</button>
+                                    <button type="button" class="btn btn-big btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalCloverSuccess">Обсудить проект</button>
                                 </div>
                             </div>
                         </form>
@@ -1751,7 +1751,26 @@
     </div>
 </div>
     <!-- modal-success -->
-    
+    <!-- Спасибо (модалка) -->
+<div class="modal modalSuccess modalCloverSuccess fade" id="modalCloverSuccess" aria-hidden="true" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body">
+                <!-- btn-close -->
+                <div class="d-flex justify-content-end">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="position-relative">
+                    <div class="h4 text-center mb-3">Спасибо!</div>
+                    <div class="text-center fw-500" style="opacity: 0.6;">Ваша заявка принята. Мы&nbsp;свяжемся с&nbsp;вами в&nbsp;ближайшее время</div>
+                    <div class="mt-4">
+                        <button class="btn btn-big btn-primary w-100" data-bs-dismiss="modal">Закрыть</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
     <!-- scripts -->
     <script src="assets/js/bootstrap.bundle.min.js"></script>
@@ -1759,6 +1778,7 @@
     <script src="assets/js/fancybox.umd.js"></script>
     <script src="assets/js/imask.min.js"></script>
     <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/confetti.browser.min.js"></script>
     <script src="assets/js/main.js"></script>
 
 </body>

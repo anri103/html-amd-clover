@@ -607,6 +607,39 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    //////////////////////////////////////////////////////////////////
+    // [ Confetti ]
+
+    function initConfetti() {
+        if (typeof confetti === 'undefined') return;
+
+        window.fireConfetti = function () {
+            setTimeout(function () {
+                confetti({
+                    particleCount: 140,
+                    angle: 120,
+                    spread: 55,
+                    origin: { x: 0.4, y: 0.6 },
+                    colors: ['4251F7', 'DFEAFD', '4251C3', '7483F5', 'F0F7FF', 'F74251'],
+                });
+                confetti({
+                    particleCount: 90,
+                    angle: 60,
+                    spread: 55,
+                    origin: { x: 0.6, y: 0.6 },
+                    colors: ['F0F7FF', 'F74251', '4251C3', '7483F5', '4251F7', 'DFEAFD'],
+                });
+            }, 300);
+        };
+
+        var successModal = document.querySelector('#modalCloverSuccess');
+        if (!successModal) return;
+
+        successModal.addEventListener('show.bs.modal', function () {
+            window.fireConfetti();
+        });
+    }
+
 
     //////////////////////////////////////////////////////////////////
     // [ Init All ]
@@ -624,5 +657,6 @@ document.addEventListener('DOMContentLoaded', function () {
     initTypewriterAnimations();
     initDecorVideos();
     initCardMagneticPlayBtn();
+    initConfetti();
 
 });
