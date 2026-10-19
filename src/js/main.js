@@ -726,7 +726,7 @@ document.addEventListener('DOMContentLoaded', function () {
     //////////////////////////////////////////////////////////////////
     // [ Init All ]
 
-    initWow();
+    // initWow();
     initFixedHeader();
     initBackToTop();
     initSwipers();
@@ -735,11 +735,22 @@ document.addEventListener('DOMContentLoaded', function () {
     initAccordionScroll();
     initCloseOffcanvas();
 
-    initStrikeAnimations();
-    initTypewriterAnimations();
+    // initStrikeAnimations();
+    // initTypewriterAnimations();
+
     initDecorVideos();
     initCardMagneticPlayBtn();
     initConfetti();
-    initPreloader();
+    
+    initPreloader({
+        onDone: function () {
+            // WOW-анимации
+            initWow();
+
+            // Анимации заголовка первой секции
+            initStrikeAnimations();
+            initTypewriterAnimations();
+        }
+    });
 
 });
