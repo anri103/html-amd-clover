@@ -11,14 +11,17 @@
     }
 }
 
-/* Скрываем WOW-элементы до запуска анимации */
+// WOW-base
 .wow {
     visibility: hidden;
-}
 
-/* Показываем элемент, когда WOW.js запускает анимацию */
-.wow.animated {
-    visibility: visible;
+    &.animated {
+        visibility: visible;
+    }
+
+    @include media-breakpoint-down(lg) {
+        visibility: visible !important;
+    }
 }
 
 // fadeInLeft
