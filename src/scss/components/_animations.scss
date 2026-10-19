@@ -11,6 +11,16 @@
     }
 }
 
+/* Скрываем WOW-элементы до запуска анимации */
+.wow {
+    visibility: hidden;
+}
+
+/* Показываем элемент, когда WOW.js запускает анимацию */
+.wow.animated {
+    visibility: visible;
+}
+
 // fadeInLeft
 .fadeInLeft {
     animation: fadeInLeft forwards;
