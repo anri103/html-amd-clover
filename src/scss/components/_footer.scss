@@ -35,6 +35,22 @@
         }
     }
 
+    .btnGoToAmd {
+        --bs-btn-font-size: 14px;
+        --bs-btn-color: var(--bs-body-color);
+        --bs-btn-border-color: #CCDACC;
+        --bs-btn-hover-color: #F6F9F6;
+        --bs-btn-hover-bg: #204520;
+        --bs-btn-hover-border-color: #204520;
+        --bs-btn-active-color: #F6F9F6;
+        --bs-btn-active-bg: #204520;
+        --bs-btn-active-border-color: #204520;
+        --bs-btn-disabled-color: #F6F9F6;
+        --bs-btn-disabled-bg: #204520;
+        --bs-btn-disabled-border-color: #204520;
+        text-transform: none;
+    }
+
     .btnPhone {
         --bs-btn-padding-y: 1.25rem;
         --bs-btn-padding-x: 1.5rem;
