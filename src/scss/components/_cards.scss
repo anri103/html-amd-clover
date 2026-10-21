@@ -429,197 +429,117 @@
 
 // cardMedia
 .cardMedia {
-  position: relative;
-  min-height: 535px;
-  overflow: hidden;
-
-  background: #dde7dd;
-  border-radius: 28px;
-
-  .card-body {
     position: relative;
-    min-height: 535px;
-    padding: 40px 32px;
-  }
+    overflow: hidden;
+    padding-bottom: 177.78%;
+    border-radius: 28px;
+    background: #000;
 
-  .card-image {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-    object-position: center;
-
-    opacity: 0;
-    transform: scale(1.03);
-
-    transition:
-      opacity 0.5s ease,
-      transform 0.7s ease;
-  }
-
-  .card-title {
-    position: absolute;
-    top: 50%;
-    left: 32px;
-    right: 32px;
-    z-index: 2;
-
-    color: #8fa292;
-    font-size: 16px;
-    line-height: 1.3;
-    text-align: center;
-
-    transform: translateY(-50%);
-
-    transition:
-      top 0.6s cubic-bezier(0.22, 1, 0.36, 1),
-      transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
-      color 0.4s ease;
-  }
-
-  .card-play {
-    --magnetic-x: 0px;
-    --magnetic-y: 0px;
-
-    position: absolute;
-    left: 50%;
-    bottom: 42px;
-    z-index: 3;
-
-    width: 90px;
-    height: 90px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    color: #fff;
-    text-decoration: none;
-
-    opacity: 0;
-
-    transform:
-      translateX(calc(-50% + var(--magnetic-x)))
-      translateY(var(--magnetic-y))
-      scale(0.7);
-
-    will-change: transform;
-
-    transition:
-      opacity 0.4s ease,
-      transform 0.15s ease;
-
-    &:hover {
-      color: #fff;
-      text-decoration: none;
-    }
-
-    &__circle {
-      position: relative;
-
-      width: 72px;
-      height: 72px;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-    //   border: 1px solid rgba(255, 255, 255, 0.6);
-      border-radius: 50%;
-    }
-
-    &__icon {
-      width: 0;
-      height: 0;
-      margin-left: 4px;
-
-      border-top: 9px solid transparent;
-      border-bottom: 9px solid transparent;
-      border-left: 14px solid #fff;
-    }
-
-    &__text {
-      position: absolute;
-      inset: 0;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      animation: cardMediaRotate 10s linear infinite;
-
-      img,
-      svg {
+    .card-bg-image {
+        position: absolute;
+        inset: 0;
         width: 100%;
         height: 100%;
-        display: block;
-      }
-    }
-  }
-
-  @include media-breakpoint-up(xl) {
-    .card-title {
-        font-size: 20px;
-    }
-    
-    &:hover {
-      .card-image {
-        opacity: 1;
+        object-fit: cover;
+        object-position: center;
+        opacity: 0.65;
         transform: scale(1);
-      }
-
-      .card-title {
-        top: 40px;
-        transform: translateY(0);
-        color: #fff;
-      }
-
-      .card-play {
-        opacity: 1;
-
-        transform:
-          translateX(calc(-50% + var(--magnetic-x)))
-          translateY(var(--magnetic-y))
-          scale(1);
-      }
-    }
-  }
-
-  @include media-breakpoint-down(xl) {
-    .card-image {
-      opacity: 1;
-      transform: scale(1);
+        transition: all 0.3s ease;
     }
 
     .card-title {
-      top: 32px;
-      transform: translateY(0);
-      color: #fff;
+        position: absolute;
+        top: 32px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        color: #fff;
+        font-size: 16px;
+        line-height: 1.3;
+        text-align: center;
+        margin-bottom: 0;
     }
 
-    .card-play {
-      opacity: 1;
+    .cardBtnPlay {
+        position: absolute;
+        left: 50%;
+        bottom: 42px;
+        transform: translateX(-50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 90px;
+        height: 90px;
+        color: #fff;
+        text-decoration: none;
 
-      transform:
-        translateX(-50%)
-        translateY(0)
-        scale(1);
+        &__circle {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+        }
+
+        &__icon {
+            width: 0;
+            height: 0;
+            margin-left: 4px;
+            border-top: 9px solid transparent;
+            border-bottom: 9px solid transparent;
+            border-left: 14px solid #fff;
+        }
+
+        &__text {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            // animation: cardMediaRotate 10s linear infinite;
+
+            img,
+            svg {
+                width: 100%;
+                height: 100%;
+                display: block;
+            }
+        }
     }
-  }
+
+    @include media-breakpoint-up(xl) {
+        .card-title {
+            top: 40px;
+            font-size: 20px;
+        }
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            .card-bg-image {
+                opacity: 1;
+                transform: scale(1.15);
+            }
+
+            .cardBtnPlay {
+                &__text {
+                     animation: cardMediaRotate 10s linear infinite;
+                }
+            }
+        }
+    }
 }
 
 @keyframes cardMediaRotate {
-  from {
-    transform: rotate(0deg);
-  }
+    from {
+        transform: rotate(0deg);
+    }
 
-  to {
-    transform: rotate(360deg);
-  }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 // cardAdvantage

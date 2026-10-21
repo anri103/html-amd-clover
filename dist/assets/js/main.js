@@ -526,86 +526,86 @@ document.addEventListener('DOMContentLoaded', function () {
     //////////////////////////////////////////////////////////////////
     // [ Decor Videos ]
 
-    function initCardMagneticPlayBtn() {
-        const magneticCards = document.querySelectorAll('.cardMedia');
+    // function initCardMagneticPlayBtn() {
+    //     const magneticCards = document.querySelectorAll('.cardMedia');
 
-        const desktopMedia = window.matchMedia('(min-width: 1200px)');
+    //     const desktopMedia = window.matchMedia('(min-width: 1200px)');
 
-        if (desktopMedia.matches) {
-        magneticCards.forEach((card) => {
-            const button = card.querySelector('.card-play');
+    //     if (desktopMedia.matches) {
+    //     magneticCards.forEach((card) => {
+    //         const button = card.querySelector('.cardBtnPlay');
 
-            if (!button) {
-            return;
-            }
+    //         if (!button) {
+    //         return;
+    //         }
 
-            const distance = Number(
-            button.dataset.magneticDistance || 50
-            );
+    //         const distance = Number(
+    //         button.dataset.magneticDistance || 50
+    //         );
 
-            const strength = Number(
-            button.dataset.magneticStrength || 0.35
-            );
+    //         const strength = Number(
+    //         button.dataset.magneticStrength || 0.35
+    //         );
 
-            let animationFrame;
+    //         let animationFrame;
 
-            card.addEventListener('mousemove', (event) => {
-            cancelAnimationFrame(animationFrame);
+    //         card.addEventListener('mousemove', (event) => {
+    //         cancelAnimationFrame(animationFrame);
 
-            animationFrame = requestAnimationFrame(() => {
-                const rect = button.getBoundingClientRect();
+    //         animationFrame = requestAnimationFrame(() => {
+    //             const rect = button.getBoundingClientRect();
 
-                const closestX = Math.max(
-                rect.left,
-                Math.min(event.clientX, rect.right)
-                );
+    //             const closestX = Math.max(
+    //             rect.left,
+    //             Math.min(event.clientX, rect.right)
+    //             );
 
-                const closestY = Math.max(
-                rect.top,
-                Math.min(event.clientY, rect.bottom)
-                );
+    //             const closestY = Math.max(
+    //             rect.top,
+    //             Math.min(event.clientY, rect.bottom)
+    //             );
 
-                const diffX = event.clientX - closestX;
-                const diffY = event.clientY - closestY;
+    //             const diffX = event.clientX - closestX;
+    //             const diffY = event.clientY - closestY;
 
-                const currentDistance = Math.sqrt(
-                diffX * diffX + diffY * diffY
-                );
+    //             const currentDistance = Math.sqrt(
+    //             diffX * diffX + diffY * diffY
+    //             );
 
-                if (currentDistance > distance) {
-                button.style.setProperty('--magnetic-x', '0px');
-                button.style.setProperty('--magnetic-y', '0px');
+    //             if (currentDistance > distance) {
+    //             button.style.setProperty('--magnetic-x', '0px');
+    //             button.style.setProperty('--magnetic-y', '0px');
 
-                return;
-                }
+    //             return;
+    //             }
 
-                const centerX = rect.left + rect.width / 2;
-                const centerY = rect.top + rect.height / 2;
+    //             const centerX = rect.left + rect.width / 2;
+    //             const centerY = rect.top + rect.height / 2;
 
-                const moveX = (event.clientX - centerX) * strength;
-                const moveY = (event.clientY - centerY) * strength;
+    //             const moveX = (event.clientX - centerX) * strength;
+    //             const moveY = (event.clientY - centerY) * strength;
 
-                button.style.setProperty(
-                '--magnetic-x',
-                `${moveX}px`
-                );
+    //             button.style.setProperty(
+    //             '--magnetic-x',
+    //             `${moveX}px`
+    //             );
 
-                button.style.setProperty(
-                '--magnetic-y',
-                `${moveY}px`
-                );
-            });
-            });
+    //             button.style.setProperty(
+    //             '--magnetic-y',
+    //             `${moveY}px`
+    //             );
+    //         });
+    //         });
 
-            card.addEventListener('mouseleave', () => {
-            cancelAnimationFrame(animationFrame);
+    //         card.addEventListener('mouseleave', () => {
+    //         cancelAnimationFrame(animationFrame);
 
-            button.style.setProperty('--magnetic-x', '0px');
-            button.style.setProperty('--magnetic-y', '0px');
-            });
-        });
-        }
-    }
+    //         button.style.setProperty('--magnetic-x', '0px');
+    //         button.style.setProperty('--magnetic-y', '0px');
+    //         });
+    //     });
+    //     }
+    // }
 
     //////////////////////////////////////////////////////////////////
     // [ Confetti ]
@@ -739,7 +739,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // initTypewriterAnimations();
 
     initDecorVideos();
-    initCardMagneticPlayBtn();
+    // initCardMagneticPlayBtn();
     initConfetti();
     
     initPreloader({
