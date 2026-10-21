@@ -112,7 +112,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 button.addEventListener('click', () => swiper.slideNext());
             });
         }
-
     }
 
     //////////////////////////////////////////////////////////////////
@@ -253,7 +252,6 @@ document.addEventListener('DOMContentLoaded', function () {
 		return new Promise(resolve => setTimeout(resolve, ms));
 	}
 
-
 	/**
 	 * Возвращает общие настройки анимации элемента.
 	 *
@@ -273,7 +271,6 @@ document.addEventListener('DOMContentLoaded', function () {
 			)
 		};
 	}
-
 
 	//////////////////////////////////////////////////////////////////
 	// [ Strike Animation ]
@@ -312,7 +309,6 @@ document.addEventListener('DOMContentLoaded', function () {
 		});
 	}
 
-
 	//////////////////////////////////////////////////////////////////
 	// [ Typewriter Animation ]
 
@@ -337,7 +333,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 		});
 	}
-
 
 	/**
 	 * Печатает текст элемента за указанную duration.
@@ -368,7 +363,6 @@ document.addEventListener('DOMContentLoaded', function () {
         cursor.classList.add('is-hidden');
     }
 
-
 	/**
 	 * Разбивает текстовые узлы на отдельные буквы.
 	 *
@@ -384,7 +378,6 @@ document.addEventListener('DOMContentLoaded', function () {
 		);
 
 		const textNodes = [];
-
 
 		/*
 		 * Сначала собираем все текстовые узлы.
@@ -414,11 +407,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
 			});
 
-
 			node.replaceWith(fragment);
 
 		});
-
 
 		return letters;
 	}
@@ -524,90 +515,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     //////////////////////////////////////////////////////////////////
-    // [ Decor Videos ]
-
-    // function initCardMagneticPlayBtn() {
-    //     const magneticCards = document.querySelectorAll('.cardMedia');
-
-    //     const desktopMedia = window.matchMedia('(min-width: 1200px)');
-
-    //     if (desktopMedia.matches) {
-    //     magneticCards.forEach((card) => {
-    //         const button = card.querySelector('.cardBtnPlay');
-
-    //         if (!button) {
-    //         return;
-    //         }
-
-    //         const distance = Number(
-    //         button.dataset.magneticDistance || 50
-    //         );
-
-    //         const strength = Number(
-    //         button.dataset.magneticStrength || 0.35
-    //         );
-
-    //         let animationFrame;
-
-    //         card.addEventListener('mousemove', (event) => {
-    //         cancelAnimationFrame(animationFrame);
-
-    //         animationFrame = requestAnimationFrame(() => {
-    //             const rect = button.getBoundingClientRect();
-
-    //             const closestX = Math.max(
-    //             rect.left,
-    //             Math.min(event.clientX, rect.right)
-    //             );
-
-    //             const closestY = Math.max(
-    //             rect.top,
-    //             Math.min(event.clientY, rect.bottom)
-    //             );
-
-    //             const diffX = event.clientX - closestX;
-    //             const diffY = event.clientY - closestY;
-
-    //             const currentDistance = Math.sqrt(
-    //             diffX * diffX + diffY * diffY
-    //             );
-
-    //             if (currentDistance > distance) {
-    //             button.style.setProperty('--magnetic-x', '0px');
-    //             button.style.setProperty('--magnetic-y', '0px');
-
-    //             return;
-    //             }
-
-    //             const centerX = rect.left + rect.width / 2;
-    //             const centerY = rect.top + rect.height / 2;
-
-    //             const moveX = (event.clientX - centerX) * strength;
-    //             const moveY = (event.clientY - centerY) * strength;
-
-    //             button.style.setProperty(
-    //             '--magnetic-x',
-    //             `${moveX}px`
-    //             );
-
-    //             button.style.setProperty(
-    //             '--magnetic-y',
-    //             `${moveY}px`
-    //             );
-    //         });
-    //         });
-
-    //         card.addEventListener('mouseleave', () => {
-    //         cancelAnimationFrame(animationFrame);
-
-    //         button.style.setProperty('--magnetic-x', '0px');
-    //         button.style.setProperty('--magnetic-y', '0px');
-    //         });
-    //     });
-    //     }
-    // }
-
-    //////////////////////////////////////////////////////////////////
     // [ Confetti ]
 
     function initConfetti() {
@@ -640,18 +547,21 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    //////////////////////////////////////////////////////////////////
+    // [ Preloader ]
+    
     /**
-   * initPreloader — запускает прелоадер.
-   * Прогресс плавно растёт до 90%, пока страница грузится,
-   * после window.load доходит до 100% и прелоадер скрывается.
-   *
-   * Параметры:
-   *  - selector: селектор корневого элемента
-   *  - minTime:  минимальное время показа, мс
-   *  - onDone:   колбэк после скрытия
-   *
-   * Возвращает { set(percent) } — для ручного управления прогрессом.
-   */
+     * initPreloader — запускает прелоадер.
+     * Прогресс плавно растёт до 90%, пока страница грузится,
+     * после window.load доходит до 100% и прелоадер скрывается.
+     *
+     * Параметры:
+     *  - selector: селектор корневого элемента
+     *  - minTime:  минимальное время показа, мс
+     *  - onDone:   колбэк после скрытия
+     *
+     * Возвращает { set(percent) } — для ручного управления прогрессом.
+     */
     function initPreloader({ selector = '#preloader', minTime = 1500, onDone } = {}) {
         const root = document.querySelector(selector);
         if (!root) return null;
@@ -726,7 +636,6 @@ document.addEventListener('DOMContentLoaded', function () {
     //////////////////////////////////////////////////////////////////
     // [ Init All ]
 
-    // initWow();
     initFixedHeader();
     initBackToTop();
     initSwipers();
@@ -734,22 +643,27 @@ document.addEventListener('DOMContentLoaded', function () {
     initFancybox();
     initAccordionScroll();
     initCloseOffcanvas();
-
-    // initStrikeAnimations();
-    // initTypewriterAnimations();
-
     initDecorVideos();
-    // initCardMagneticPlayBtn();
     initConfetti();
     
     initPreloader({
         onDone: function () {
-            // WOW-анимации
+            // Очередность анимаций в зависимости от ширины экрана устройства
+
+            // Mobile
+            if (window.matchMedia('(max-width: 991px)').matches) {
+                initStrikeAnimations();
+                initTypewriterAnimations();
+                return;
+            }
+
             initWow();
 
-            // Анимации заголовка первой секции
-            initStrikeAnimations();
-            initTypewriterAnimations();
+            // Desktop
+            setTimeout(function () {
+                initStrikeAnimations();
+                initTypewriterAnimations();
+            }, 1000);
         }
     });
 
